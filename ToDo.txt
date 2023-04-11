@@ -1,2 +1,4 @@
 - Para os Veiculos colocar a opção de selecionar/desselecionar todos os veiculos de uma classe de uma só vez, por exemplo: desselecionar todas as motos
-    -    tentar aplicar essa ideia a outras partes, como desselecionar todos os personagens baby, etc..
+    - Tentar aplicar essa ideia a outras partes, como desselecionar todos os personagens baby, etc..
+
+- Colocar um footer com os direitos reservados para a nintendo, etc
