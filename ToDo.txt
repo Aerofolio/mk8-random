@@ -2,4 +2,5 @@
     - Tentar aplicar essa ideia a outras partes, como desselecionar todos os personagens baby, etc..
 
 - Colocar um footer com os direitos reservados para a nintendo, etc
+- Talvez colocar um efeito ao passar o mouse por cima de uma das células, para indicar melhro que elas são clicaveis
 - erro se todos estiverem vermelhos
