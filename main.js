@@ -1,5 +1,5 @@
 //################## Characters Stuff ##################
-let characters = [
+const characters = [
     {
         imagePath: 'images/characters/mario_icon.png',
         name: 'Mario',
@@ -266,6 +266,83 @@ selectCharacter = (characterId) => {
     changeSelectableBorderColor(character);
 }
 
+createCharactersTable = () => {
+    let charactersTableInnerHTML = '';
+    let column = 0;
+    for(let i = 0; i < characters.length; i++){
+        if(column == 0) charactersTableInnerHTML += '<tr>';
+    
+        let character = characters[i];
+        charactersTableInnerHTML += '<td id="' + character.name + '-' + character.id + '" class="selectableCell" onclick="selectCharacter(' + character.id + ')">';
+        charactersTableInnerHTML += '<span>' + character.name + '</span>';
+        charactersTableInnerHTML += '<br>';
+        charactersTableInnerHTML += '<img class="charactersIcon" src="' + character.imagePath + '">';
+        charactersTableInnerHTML += '</td>';
+    
+        column++;
+        if(column == numberOfColumns){
+            charactersTableInnerHTML += '</tr>';
+            column = 0;
+        }
+    }
+    
+    document.getElementById('charactersTable').innerHTML = charactersTableInnerHTML;
+}
+
+//################## Vehicles Stuff ##################
+const vehicles = [
+    {
+        imagePath: 'images/vehicles/karts/standartKart.webp',
+        name: 'Standart Kart',
+        id: 1,
+        selectable: true,
+        type: 'kart'
+    },
+    {
+        imagePath: 'images/vehicles/karts/pipeFrameKart.webp',
+        name: 'Pipe Frame',
+        id: 2,
+        selectable: true,
+        type: 'kart'
+    },
+    {
+        imagePath: 'images/vehicles/karts/mach8Kart.webp',
+        name: 'Mach 8',
+        id: 3,
+        selectable: true,
+        type: 'kart'
+    }
+]
+
+selectVehicle = (vehicleId) => {
+    let vehicle = vehicles.find(x => x.id == vehicleId);
+    vehicle.selectable = !vehicle.selectable;
+    changeSelectableBorderColor(vehicle);
+}
+
+createVehiclesTables = () => {
+    let vehiclesTableInnerHTML = '';
+    let column = 0;
+    for(let i = 0; i < vehicles.length; i++){
+        if(column == 0) charactersTableInnerHTML += '<tr>';
+    
+        let character = characters[i];
+        charactersTableInnerHTML += '<td id="' + character.name + '-' + character.id + '" class="selectableCell" onclick="selectCharacter(' + character.id + ')">';
+        charactersTableInnerHTML += '<span>' + character.name + '</span>';
+        charactersTableInnerHTML += '<br>';
+        charactersTableInnerHTML += '<img class="charactersIcon" src="' + character.imagePath + '">';
+        charactersTableInnerHTML += '</td>';
+    
+        column++;
+        if(column == numberOfColumns){
+            charactersTableInnerHTML += '</tr>';
+            column = 0;
+        }
+    }
+    
+    document.getElementById('charactersTable').innerHTML = charactersTableInnerHTML;
+}
+
 //################## Util ##################
 changeSelectableBorderColor = (element) => {
     let characterHTMLCell = document.getElementById(element.name + '-' + element.id);
@@ -277,26 +354,6 @@ changeSelectableBorderColor = (element) => {
 }
 
 //################## Start ##################
-//Characters Table
-let charactersTableInnerHTML = '';
-let column = 0;
-let characterIndex = 0;
-
-while(characterIndex < characters.length){
-    if(column == 0) charactersTableInnerHTML += '<tr>';
-
-    charactersTableInnerHTML += '<td id="' + characters[characterIndex].name + '-' + characters[characterIndex].id + '" class="selectableCell" onclick="selectCharacter(' + characters[characterIndex].id + ')">';
-    charactersTableInnerHTML += '<span>' + characters[characterIndex].name + '</span>';
-    charactersTableInnerHTML += '<br>';
-    charactersTableInnerHTML += '<img class="charactersIcon" src="' + characters[characterIndex].imagePath + '">';
-    charactersTableInnerHTML += '</td>';
-
-    characterIndex++;
-    column++;
-    if(column == 7){
-        charactersTableInnerHTML += '</tr>';
-        column = 0;
-    }
-}
-
-document.getElementById('charactersTable').innerHTML = charactersTableInnerHTML;
+const numberOfColumns = 7;
+createCharactersTable();
+createVehiclesTables();

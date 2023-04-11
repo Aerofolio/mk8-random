@@ -8,6 +8,7 @@
     font-family: 'Times New Roman';
     border: 2px solid blue;
     background-color: #accbfc;
+    width: 125px;
 }
 
 .unselectableCell{
@@ -16,4 +17,5 @@
     font-family: 'Times New Roman';
     border: 2px solid red;
     background-color: #fcacac;
+    width: 125px;
 }
