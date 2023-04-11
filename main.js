@@ -161,6 +161,102 @@ let characters = [
         name: 'Dry Bones',
         id: 27,
         selectable: true
+    },
+    {
+        imagePath: 'images/characters/bowserJr_icon.png',
+        name: 'Bowser Jr.',
+        id: 28,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/dryBowser_icon.png',
+        name: 'Dry Bowser',
+        id: 29,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/lemmy_icon.png',
+        name: 'Lemmy',
+        id: 30,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/larry_icon.png',
+        name: 'Larry',
+        id: 31,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/wendy_icon.png',
+        name: 'Wendy',
+        id: 32,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/ludwig_icon.png',
+        name: 'Ludwig',
+        id: 33,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/iggy_icon.png',
+        name: 'Iggy',
+        id: 34,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/roy_icon.png',
+        name: 'Roy',
+        id: 35,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/morton_icon.webp',
+        name: 'Morton',
+        id: 36,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/inklingGirl_icon.png',
+        name: 'Inkling Girl',
+        id: 37,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/inklingBoy_icon.png',
+        name: 'Inkling Boy',
+        id: 38,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/link_icon.png',
+        name: 'Link',
+        id: 39,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/villagerMale_icon.png',
+        name: 'Villager(Male)',
+        id: 40,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/villagerFemale_icon.png',
+        name: 'Villager(Female)',
+        id: 41,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/isabelle_icon.png',
+        name: 'Isabelle',
+        id: 42,
+        selectable: true
+    },
+    {
+        imagePath: 'images/characters/mii_icon.png',
+        name: 'Mii',
+        id: 53,
+        selectable: true
     }
 ]
 
