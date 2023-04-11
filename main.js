@@ -907,9 +907,170 @@ createDeselectAllTiresButton = () => {
     deselectButton.classList.add('button');
     deselectButton.classList.add('deselectAllButton');
     deselectButton.onclick = () => {
-        let selectedTires = characters.filter(x => x.selectable);
+        let selectedTires = tires.filter(x => x.selectable);
         for(let i = 0; i < selectedTires.length; i++){
             selectTire(selectedTires[i].id, false);
+        }
+    };
+    return deselectButton;
+}
+
+//################## Gliders Stuff ##################
+const gliders = [
+    {
+        imagePath: 'images/gliders/superGliderGlider.png',
+        name: 'Super Glider',
+        id: 1,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/cloudGliderGlider.png',
+        name: 'Cloud Glider',
+        id: 2,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/warioWingGlider.png',
+        name: 'Wario Wing',
+        id: 3,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/waddleWingGlider.png',
+        name: 'Waddle Wing',
+        id: 4,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/peachParasolGlider.png',
+        name: 'Peach Parasol',
+        id: 5,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/parachuteGlider.png',
+        name: 'Parachute',
+        id: 6,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/parafoilGlider.png',
+        name: 'Parafoil',
+        id: 7,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/flowerGliderGlider.png',
+        name: 'Flower Glider',
+        id: 8,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/bowserKiteGlider.png',
+        name: 'Bowser Kite',
+        id: 9,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/planeGliderGlider.png',
+        name: 'Plane Glider',
+        id: 10,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/mktvParafoilGlider.png',
+        name: 'MKTV Parafoil',
+        id: 11,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/goldGliderGlider.png',
+        name: 'Gold Glider',
+        id: 12,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/hylianKiteGlider.png',
+        name: 'Hylian Kite',
+        id: 13,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/paragliderGlider.png',
+        name: 'Paraglider',
+        id: 14,
+        selectable: true
+    },
+    {
+        imagePath: 'images/gliders/paperGliderGlider.png',
+        name: 'Paper Glider',
+        id: 15,
+        selectable: true
+    }
+]
+
+selectGlider = (gliderId, value) => {
+    let glider = gliders.find(x => x.id == gliderId);
+    if(value != undefined)
+        glider.selectable = value;
+    else
+        glider.selectable = !glider.selectable;
+    changeSelectableBorderColor(glider);
+}
+
+createGlidersTable = () => {
+    let glidersTableInnerHTML = '',
+        column = 0,
+        glidersTable = document.getElementById('glidersTable'),
+        glidersDiv = document.getElementById('glidersDiv');
+
+    for(let i = 0; i < gliders.length; i++){
+        if(column == 0) glidersTableInnerHTML += '<tr>';
+    
+        let glider = gliders[i];
+        glidersTableInnerHTML += '<td id="' + glider.name + '-' + glider.id + '" class="selectableCell" onclick="selectGlider(' + glider.id + ')">';
+        glidersTableInnerHTML += '<span>' + glider.name + '</span>';
+        glidersTableInnerHTML += '<br>';
+        glidersTableInnerHTML += '<img class="gliderIcon" src="' + glider.imagePath + '">';
+        glidersTableInnerHTML += '</td>';
+    
+        column++;
+        if(column == numberOfColumns){
+            glidersTableInnerHTML += '</tr>';
+            column = 0;
+        }
+    }
+    
+    glidersTable.innerHTML = glidersTableInnerHTML;
+    glidersDiv.insertBefore(createSelectAllGlidersButton(), glidersTable);
+    glidersDiv.insertBefore(createDeselectAllGlidersButton(), glidersTable);
+}
+
+createSelectAllGlidersButton = () => {
+    let selectButton = document.createElement('button');
+    selectButton.innerHTML = 'Select All';
+    selectButton.id = 'btnSelectAll-Gliders';
+    selectButton.classList.add('button');
+    selectButton.classList.add('selectAllButton');
+    selectButton.onclick = () => {
+        let selectedGliders = gliders.filter(x => !x.selectable);
+        for(let i = 0; i < selectedGliders.length; i++){
+            selectGlider(selectedGliders[i].id, true);
+        }
+    };
+    return selectButton;
+}
+
+createDeselectAllGlidersButton = () => {
+    let deselectButton = document.createElement('button');
+    deselectButton.innerHTML = 'Deselect All';
+    deselectButton.id = 'btnDeselectAll-Gliders';
+    deselectButton.classList.add('button');
+    deselectButton.classList.add('deselectAllButton');
+    deselectButton.onclick = () => {
+        let selectedGliders = gliders.filter(x => x.selectable);
+        for(let i = 0; i < selectedGliders.length; i++){
+            selectGlider(selectedGliders[i].id, false);
         }
     };
     return deselectButton;
@@ -930,3 +1091,4 @@ const numberOfColumns = 7;
 createCharactersTable();
 createVehiclesTables();
 createTiresTable();
+createGlidersTable();

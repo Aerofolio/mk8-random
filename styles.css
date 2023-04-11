@@ -10,6 +10,10 @@
     width: 90%;
 }
 
+.gliderIcon{
+    width: 80%;
+}
+
 .selectableCell{
     text-align: center;
     font-weight: bold;
