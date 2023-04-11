@@ -1,0 +1,19 @@
+.charactersIcon{
+    width: 50%;
+}
+
+.selectableCell{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    border: 2px solid blue;
+    background-color: #accbfc;
+}
+
+.unselectableCell{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    border: 2px solid red;
+    background-color: #fcacac;
+}
