@@ -301,6 +301,7 @@ createSelectAllCharactersButton = () => {
     let selectButton = document.createElement('button');
     selectButton.innerHTML = 'Select All';
     selectButton.id = 'btnSelectAll-Characters';
+    selectButton.classList.add('button');
     selectButton.classList.add('selectAllButton');
     selectButton.onclick = () => {
         let selectedCharacters = characters.filter(x => !x.selectable);
@@ -315,6 +316,7 @@ createDeselectAllCharactersButton = () => {
     let deselectButton = document.createElement('button');
     deselectButton.innerHTML = 'Deselect All';
     deselectButton.id = 'btnDeselectAll-Characters';
+    deselectButton.classList.add('button');
     deselectButton.classList.add('deselectAllButton');
     deselectButton.onclick = () => {
         let selectedCharacters = characters.filter(x => x.selectable);
@@ -684,6 +686,7 @@ createSelectAllVehicleButton = (vehicleType) => {
     let selectButton = document.createElement('button');
     selectButton.innerHTML = 'Select All';
     selectButton.id = 'btnSelectAll-' + vehicleType;
+    selectButton.classList.add('button');
     selectButton.classList.add('selectAllButton');
     selectButton.onclick = () => {
         let selectedVehicles = vehicles.filter(x => x.type == vehicleType && !x.selectable);
@@ -698,6 +701,7 @@ createDeselectAllVehicleButton = (vehicleType) => {
     let deselectButton = document.createElement('button');
     deselectButton.innerHTML = 'Deselect All';
     deselectButton.id = 'btnDeselectAll-' + vehicleType;
+    deselectButton.classList.add('button');
     deselectButton.classList.add('deselectAllButton');
     deselectButton.onclick = () => {
         let selectedVehicles = vehicles.filter(x => x.type == vehicleType && x.selectable);
