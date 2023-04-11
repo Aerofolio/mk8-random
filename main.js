@@ -712,6 +712,209 @@ createDeselectAllVehicleButton = (vehicleType) => {
     return deselectButton;
 }
 
+//################## Tires Stuff ##################
+const tires = [
+    {
+        imagePath: 'images/tires/standartTire.png',
+        name: 'Standart',
+        id: 1,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/monsterTire.png',
+        name: 'Monster',
+        id: 2,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/rollerTire.png',
+        name: 'Roller',
+        id: 3,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/slimTire.png',
+        name: 'Slim',
+        id: 4,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/slickTire.png',
+        name: 'Slick',
+        id: 5,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/metalTire.png',
+        name: 'Metal',
+        id: 6,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/butonTire.png',
+        name: 'Button',
+        id: 7,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/offRoadTire.png',
+        name: 'Off-Road',
+        id: 8,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/spongeTire.png',
+        name: 'Sponge',
+        id: 9,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/woodTire.png',
+        name: 'Wood',
+        id: 10,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/cushionTire.webp',
+        name: 'Cushion',
+        id: 11,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/blueStandartTire.png',
+        name: 'Blue Standart',
+        id: 12,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/hotMonsterTire.png',
+        name: 'Hot Monster',
+        id: 13,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/azureRollerTire.png',
+        name: 'Azure Roller',
+        id: 14,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/crimsonSlimTire.png',
+        name: 'Crimson Slim',
+        id: 15,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/cyberSlickTire.png',
+        name: 'Cyber Slick',
+        id: 16,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/retroOffRoadTire.png',
+        name: 'Retro Off-Road',
+        id: 17,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/goldTiresTire.png',
+        name: 'Gold Tires',
+        id: 18,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/glaTiresTire.png',
+        name: 'GLA Tires',
+        id: 19,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/triforceTiresTire.png',
+        name: 'Triforce Tires',
+        id: 20,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/ancientTiresTire.png',
+        name: 'Ancient Tires',
+        id: 21,
+        selectable: true
+    },
+    {
+        imagePath: 'images/tires/leafTiresTire.png',
+        name: 'Leaf Tires',
+        id: 22,
+        selectable: true
+    }
+]
+
+selectTire= (tireId, value) => {
+    let tire = tires.find(x => x.id == tireId);
+    if(value != undefined)
+        tire.selectable = value;
+    else
+        tire.selectable = !tire.selectable;
+    changeSelectableBorderColor(tire);
+}
+
+createTiresTable = () => {
+    let tiresTableInnerHTML = '',
+        column = 0,
+        tiresTable = document.getElementById('tiresTable'),
+        tiresDiv = document.getElementById('tiresDiv');
+
+    for(let i = 0; i < tires.length; i++){
+        if(column == 0) tiresTableInnerHTML += '<tr>';
+    
+        let tire = tires[i];
+        tiresTableInnerHTML += '<td id="' + tire.name + '-' + tire.id + '" class="selectableCell" onclick="selectTire(' + tire.id + ')">';
+        tiresTableInnerHTML += '<span>' + tire.name + '</span>';
+        tiresTableInnerHTML += '<br>';
+        tiresTableInnerHTML += '<img class="tireIcon" src="' + tire.imagePath + '">';
+        tiresTableInnerHTML += '</td>';
+    
+        column++;
+        if(column == numberOfColumns){
+            tiresTableInnerHTML += '</tr>';
+            column = 0;
+        }
+    }
+    
+    tiresTable.innerHTML = tiresTableInnerHTML;
+    tiresDiv.insertBefore(createSelectAllTiresButton(), tiresTable);
+    tiresDiv.insertBefore(createDeselectAllTiresButton(), tiresTable);
+}
+
+createSelectAllTiresButton = () => {
+    let selectButton = document.createElement('button');
+    selectButton.innerHTML = 'Select All';
+    selectButton.id = 'btnSelectAll-Tires';
+    selectButton.classList.add('button');
+    selectButton.classList.add('selectAllButton');
+    selectButton.onclick = () => {
+        let selectedTires = tires.filter(x => !x.selectable);
+        for(let i = 0; i < selectedTires.length; i++){
+            selectTire(selectedTires[i].id, true);
+        }
+    };
+    return selectButton;
+}
+
+createDeselectAllTiresButton = () => {
+    let deselectButton = document.createElement('button');
+    deselectButton.innerHTML = 'Deselect All';
+    deselectButton.id = 'btnDeselectAll-Tires';
+    deselectButton.classList.add('button');
+    deselectButton.classList.add('deselectAllButton');
+    deselectButton.onclick = () => {
+        let selectedTires = characters.filter(x => x.selectable);
+        for(let i = 0; i < selectedTires.length; i++){
+            selectTire(selectedTires[i].id, false);
+        }
+    };
+    return deselectButton;
+}
+
 //################## Util ##################
 changeSelectableBorderColor = (element) => {
     let characterHTMLCell = document.getElementById(element.name + '-' + element.id);
@@ -726,3 +929,4 @@ changeSelectableBorderColor = (element) => {
 const numberOfColumns = 7;
 createCharactersTable();
 createVehiclesTables();
+createTiresTable();
