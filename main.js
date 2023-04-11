@@ -580,17 +580,44 @@ const vehicles = [
     }
 ]
 
-selectVehicle = (vehicleId) => {
+selectVehicle = (vehicleId, value) => {
     let vehicle = vehicles.find(x => x.id == vehicleId);
-    vehicle.selectable = !vehicle.selectable;
+    if(value != undefined)
+        vehicle.selectable = value;
+    else
+        vehicle.selectable = !vehicle.selectable;
+
     changeSelectableBorderColor(vehicle);
 }
 
 createVehiclesTables = () => {
-    document.getElementById('kartsTable').innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'kart'));
-    document.getElementById('standartBikesTable').innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'standartBike'));
-    document.getElementById('sportBikesTable').innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'sportBike'));
-    document.getElementById('atvsTable').innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'atv'));
+    let kartsTable = document.getElementById('kartsTable'),
+        kartsDiv = document.getElementById('kartsDiv'),
+
+        standartBikesTable = document.getElementById('standartBikesTable'),
+        standartBikesDiv = document.getElementById('standartBikesDiv'),
+
+        sportBikesTable = document.getElementById('sportBikesTable'),
+        sportBikesDiv = document.getElementById('sportBikesDiv'),
+
+        atvsTable = document.getElementById('atvsTable'),
+        atvsDiv = document.getElementById('atvsDiv');
+    
+    kartsDiv.insertBefore(createSelectAllVehicleButton('kart'), kartsTable);
+    kartsDiv.insertBefore(createDeselectAllVehicleButton('kart'), kartsTable);
+    kartsTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'kart'));
+
+    standartBikesDiv.insertBefore(createSelectAllVehicleButton('standartBike'), standartBikesTable);
+    standartBikesDiv.insertBefore(createDeselectAllVehicleButton('standartBike'), standartBikesTable);
+    standartBikesTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'standartBike'));
+
+    sportBikesDiv.insertBefore(createSelectAllVehicleButton('sportBike'), sportBikesTable);
+    sportBikesDiv.insertBefore(createDeselectAllVehicleButton('sportBike'), sportBikesTable);
+    sportBikesTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'sportBike'));
+
+    atvsDiv.insertBefore(createSelectAllVehicleButton('atv'), atvsTable);
+    atvsDiv.insertBefore(createDeselectAllVehicleButton('atv'), atvsTable);
+    atvsTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'atv'));
 }
 
 createVehicleTableHTML = (vehiclesArray) => {
@@ -615,6 +642,34 @@ createVehicleTableHTML = (vehiclesArray) => {
     }
 
     return vehicleTableInnerHTML;
+}
+
+createSelectAllVehicleButton = (vehicleType) => {
+    let selectButton = document.createElement('button');
+    selectButton.innerHTML = 'Select All';
+    selectButton.id = 'btnSelectAll-' + vehicleType;
+    selectButton.classList.add('selectButton');
+    selectButton.onclick = () => {
+        let selectedVehicles = vehicles.filter(x => x.type == vehicleType && !x.selectable);
+        for(let i = 0; i < selectedVehicles.length; i++){
+            selectVehicle(selectedVehicles[i].id, true);
+        }
+    };
+    return selectButton;
+}
+
+createDeselectAllVehicleButton = (vehicleType) => {
+    let deselectButton = document.createElement('button');
+    deselectButton.innerHTML = 'Deselect All';
+    deselectButton.id = 'btnDeselectAll-' + vehicleType;
+    deselectButton.classList.add('deselectButton');
+    deselectButton.onclick = () => {
+        let selectedVehicles = vehicles.filter(x => x.type == vehicleType && x.selectable);
+        for(let i = 0; i < selectedVehicles.length; i++){
+            selectVehicle(selectedVehicles[i].id, false);
+        }
+    };
+    return deselectButton;
 }
 
 //################## Util ##################

@@ -13,6 +13,11 @@
     border: 2px solid blue;
     background-color: #accbfc;
     width: 130px;
+    transition-duration: 0.5s;
+}
+
+.selectableCell:hover{
+    background-color: white;
 }
 
 .unselectableCell{
@@ -22,4 +27,40 @@
     border: 2px solid red;
     background-color: #fcacac;
     width: 130px;
+    transition-duration: 0.5s;
+}
+
+.unselectableCell:hover{
+    background-color: white;
+}
+
+.selectButton{
+    background-color: #accbfc;
+    font-weight: bold;
+    color: white;
+    border: 2px solid blue;
+    width: 136px;
+    height: 40px;
+    transition-duration: 0.5s;
+    margin: 2px;
+}
+
+.selectButton:hover{
+    background-color: white;
+    color:black;
+}
+
+.deselectButton{
+    background-color: #fcacac;
+    font-weight: bold;
+    color: white;
+    border: 2px solid red;
+    width: 136px;
+    height: 40px;
+    transition-duration: 0.5s;
+}
+
+.deselectButton:hover{
+    background-color: white;
+    color:black;
 }
