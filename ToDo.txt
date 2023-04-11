@@ -2,3 +2,4 @@
     - Tentar aplicar essa ideia a outras partes, como desselecionar todos os personagens baby, etc..
 
 - Colocar um footer com os direitos reservados para a nintendo, etc
+- erro se todos estiverem vermelhos
