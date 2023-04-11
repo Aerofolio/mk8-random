@@ -34,7 +34,7 @@
     background-color: white;
 }
 
-.selectButton{
+.selectAllButton{
     background-color: #accbfc;
     font-weight: bold;
     color: white;
@@ -45,12 +45,12 @@
     margin: 2px;
 }
 
-.selectButton:hover{
+.selectAllButton:hover{
     background-color: white;
     color:black;
 }
 
-.deselectButton{
+.deselectAllButton{
     background-color: #fcacac;
     font-weight: bold;
     color: white;
@@ -60,7 +60,7 @@
     transition-duration: 0.5s;
 }
 
-.deselectButton:hover{
+.deselectAllButton:hover{
     background-color: white;
     color:black;
 }

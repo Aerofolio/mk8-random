@@ -260,15 +260,21 @@ const characters = [
     }
 ]
 
-selectCharacter = (characterId) => {
+selectCharacter = (characterId, value) => {
     let character = characters.find(x => x.id == characterId);
-    character.selectable = !character.selectable;
+    if(value != undefined)
+        character.selectable = value;
+    else
+        character.selectable = !character.selectable;
     changeSelectableBorderColor(character);
 }
 
 createCharactersTable = () => {
-    let charactersTableInnerHTML = '';
-    let column = 0;
+    let charactersTableInnerHTML = '',
+        column = 0,
+        charactersTable = document.getElementById('charactersTable'),
+        charactersDiv = document.getElementById('charactersDiv');
+
     for(let i = 0; i < characters.length; i++){
         if(column == 0) charactersTableInnerHTML += '<tr>';
     
@@ -286,7 +292,37 @@ createCharactersTable = () => {
         }
     }
     
-    document.getElementById('charactersTable').innerHTML = charactersTableInnerHTML;
+    charactersTable.innerHTML = charactersTableInnerHTML;
+    charactersDiv.insertBefore(createSelectAllCharactersButton(), charactersTable);
+    charactersDiv.insertBefore(createDeselectAllCharactersButton(), charactersTable);
+}
+
+createSelectAllCharactersButton = () => {
+    let selectButton = document.createElement('button');
+    selectButton.innerHTML = 'Select All';
+    selectButton.id = 'btnSelectAll-Characters';
+    selectButton.classList.add('selectAllButton');
+    selectButton.onclick = () => {
+        let selectedCharacters = characters.filter(x => !x.selectable);
+        for(let i = 0; i < selectedCharacters.length; i++){
+            selectCharacter(selectedCharacters[i].id, true);
+        }
+    };
+    return selectButton;
+}
+
+createDeselectAllCharactersButton = () => {
+    let deselectButton = document.createElement('button');
+    deselectButton.innerHTML = 'Deselect All';
+    deselectButton.id = 'btnDeselectAll-Characters';
+    deselectButton.classList.add('deselectAllButton');
+    deselectButton.onclick = () => {
+        let selectedCharacters = characters.filter(x => x.selectable);
+        for(let i = 0; i < selectedCharacters.length; i++){
+            selectCharacter(selectedCharacters[i].id, false);
+        }
+    };
+    return deselectButton;
 }
 
 //################## Vehicles Stuff ##################
@@ -648,7 +684,7 @@ createSelectAllVehicleButton = (vehicleType) => {
     let selectButton = document.createElement('button');
     selectButton.innerHTML = 'Select All';
     selectButton.id = 'btnSelectAll-' + vehicleType;
-    selectButton.classList.add('selectButton');
+    selectButton.classList.add('selectAllButton');
     selectButton.onclick = () => {
         let selectedVehicles = vehicles.filter(x => x.type == vehicleType && !x.selectable);
         for(let i = 0; i < selectedVehicles.length; i++){
@@ -662,7 +698,7 @@ createDeselectAllVehicleButton = (vehicleType) => {
     let deselectButton = document.createElement('button');
     deselectButton.innerHTML = 'Deselect All';
     deselectButton.id = 'btnDeselectAll-' + vehicleType;
-    deselectButton.classList.add('deselectButton');
+    deselectButton.classList.add('deselectAllButton');
     deselectButton.onclick = () => {
         let selectedVehicles = vehicles.filter(x => x.type == vehicleType && x.selectable);
         for(let i = 0; i < selectedVehicles.length; i++){
