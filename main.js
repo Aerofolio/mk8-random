@@ -670,7 +670,7 @@ const vehicles = [
     },
     {
         imagePath: 'images/vehicles/atvs/wildWigglerATV.png',
-        name: 'wild Wiggler',
+        name: 'Wild Wiggler',
         id: 37,
         selectable: true,
         type: 'atv'
