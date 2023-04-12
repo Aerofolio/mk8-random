@@ -4,253 +4,295 @@ const characters = [
         imagePath: 'images/characters/mario_icon.png',
         name: 'Mario',
         id: 1,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/luigi_icon.png',
         name: 'Luigi',
         id: 2,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/peach_icon.png',
         name: 'Peach',
         id: 3,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/daisy_icon.png',
         name: 'Daisy',
         id: 4,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/rosalina_icon.png',
         name: 'Rosalina',
         id: 5,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/tanookiMario_icon.png',
         name: 'Tanooki Mario',
         id: 6,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/catPeach_icon.png',
         name: 'Cat Peach',
         id: 7,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/birdo_icon.png',
         name: 'Birdo',
         id: 8,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/yoshi_icon.png',
         name: 'Yoshi',
         id: 9,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/toad_icon.png',
         name: 'Toad',
         id: 10,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/koopaTroopa_icon.png',
         name: 'Koopa Troopa',
         id: 11,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/shyGuy_icon.png',
         name: 'Shy Guy',
         id: 12,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/lakitu_icon.png',
         name: 'Lakitu',
         id: 13,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/toadette_icon.png',
         name: 'Toadette',
         id: 14,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/kingBoo_icon.png',
         name: 'King Boo',
         id: 15,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/babyMario_icon.webp',
         name: 'Baby Mario',
         id: 16,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/babyLuigi_icon.png',
         name: 'Baby Luigi',
         id: 17,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/babyPeach_icon.png',
         name: 'Baby Peach',
         id: 18,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/babyDaisy_icon.png',
         name: 'Baby Daisy',
         id: 19,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/babyRosalina_icon.png',
         name: 'Baby Rosalina',
         id: 20,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/metalMario_icon.png',
         name: 'Metal Mario',
         id: 21,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/pinkGoldPeach_icon.png',
         name: 'Pink Gold Peach',
         id: 22,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/wario_icon.png',
         name: 'Wario',
         id: 23,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/waluigi_icon.png',
         name: 'Waluigi',
         id: 24,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/donkeyKong_icon.png',
         name: 'Donkey Kong',
         id: 25,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/bowser_icon.png',
         name: 'Bowser',
         id: 26,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/dryBones_icon.png',
         name: 'Dry Bones',
         id: 27,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/bowserJr_icon.png',
         name: 'Bowser Jr.',
         id: 28,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/dryBowser_icon.png',
         name: 'Dry Bowser',
         id: 29,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/lemmy_icon.png',
         name: 'Lemmy',
         id: 30,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/larry_icon.png',
         name: 'Larry',
         id: 31,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/wendy_icon.png',
         name: 'Wendy',
         id: 32,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/ludwig_icon.png',
         name: 'Ludwig',
         id: 33,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/iggy_icon.png',
         name: 'Iggy',
         id: 34,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/roy_icon.png',
         name: 'Roy',
         id: 35,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/morton_icon.webp',
         name: 'Morton',
         id: 36,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/inklingGirl_icon.png',
         name: 'Inkling Girl',
         id: 37,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/inklingBoy_icon.png',
         name: 'Inkling Boy',
         id: 38,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/link_icon.png',
         name: 'Link',
         id: 39,
-        selectable: true
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/villagerMale_icon.png',
         name: 'Villager(Male)',
         id: 40,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/villagerFemale_icon.png',
         name: 'Villager(Female)',
         id: 41,
-        selectable: true
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/isabelle_icon.png',
         name: 'Isabelle',
         id: 42,
-        selectable: true
+        selectable: true,
+        type: 'small'
     },
     {
         imagePath: 'images/characters/mii_icon.png',
@@ -295,6 +337,12 @@ createCharactersTable = () => {
     charactersTable.innerHTML = charactersTableInnerHTML;
     charactersDiv.insertBefore(createSelectAllCharactersButton(), charactersTable);
     charactersDiv.insertBefore(createDeselectAllCharactersButton(), charactersTable);
+    charactersDiv.insertBefore(createSelectOnlyCharactersButton('small', 'green'), charactersTable);
+    charactersDiv.insertBefore(createDeselectCharactersButton('small', 'green'), charactersTable);
+    charactersDiv.insertBefore(createSelectOnlyCharactersButton('medium', 'yellow'), charactersTable);
+    charactersDiv.insertBefore(createDeselectCharactersButton('medium', 'yellow'), charactersTable);
+    charactersDiv.insertBefore(createSelectOnlyCharactersButton('large', 'pink'), charactersTable);
+    charactersDiv.insertBefore(createDeselectCharactersButton('large', 'pink'), charactersTable);
 }
 
 createSelectAllCharactersButton = () => {
@@ -325,6 +373,45 @@ createDeselectAllCharactersButton = () => {
         }
     };
     return deselectButton;
+}
+
+createSelectOnlyCharactersButton = (characterType, color) => {
+    let selectOnlyCharactersButton = document.createElement('button');
+    let buttonText = characterType.charAt(0).toUpperCase() + characterType.slice(1);
+
+    selectOnlyCharactersButton.innerHTML = 'Select Only '+ buttonText;
+    selectOnlyCharactersButton.id = 'btnSelectOnly' + buttonText + 'Characters';
+    selectOnlyCharactersButton.classList.add('button');
+    selectOnlyCharactersButton.classList.add(color + 'Button');
+    selectOnlyCharactersButton.onclick = () => {
+        let selectedCharacters = characters.filter(x => x.type == characterType);
+        for(let i = 0; i < selectedCharacters.length; i++){
+            selectCharacter(selectedCharacters[i].id, true);
+        }
+
+        let unSelectedCharacters = characters.filter(x => x.type != characterType);
+        for(let i = 0; i < unSelectedCharacters.length; i++){
+            selectCharacter(unSelectedCharacters[i].id, false);
+        }
+    };
+    return selectOnlyCharactersButton;
+}
+
+createDeselectCharactersButton = (characterType, color) => {
+    let deselectCharactersButton = document.createElement('button');
+    let buttonText = characterType.charAt(0).toUpperCase() + characterType.slice(1);
+
+    deselectCharactersButton.innerHTML = 'Deselect ' + buttonText;
+    deselectCharactersButton.id = 'btnDeselectAll' + buttonText + 'Characters';
+    deselectCharactersButton.classList.add('button');
+    deselectCharactersButton.classList.add(color + 'Button');
+    deselectCharactersButton.onclick = () => {
+        let selectedCharacters = characters.filter(x => x.type == characterType);
+        for(let i = 0; i < selectedCharacters.length; i++){
+            selectCharacter(selectedCharacters[i].id, false);
+        }
+    };
+    return deselectCharactersButton;
 }
 
 //################## Vehicles Stuff ##################
@@ -639,8 +726,18 @@ createVehiclesTables = () => {
         sportBikesDiv = document.getElementById('sportBikesDiv'),
 
         atvsTable = document.getElementById('atvsTable'),
-        atvsDiv = document.getElementById('atvsDiv');
+        atvsDiv = document.getElementById('atvsDiv')
+        
+        vehiclesDiv = document.getElementById('vehiclesDiv');
     
+
+    vehiclesDiv.insertBefore(createSelectAllVehiclesButton(), kartsDiv);
+    vehiclesDiv.insertBefore(createDeselectAllVehiclesButton(), kartsDiv);
+    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('kart', 'Karts', 'green'), kartsDiv);
+    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('standartBike', 'Stadart Bikes', 'yellow'), kartsDiv);
+    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('sportBike', 'Sport Bikes', 'pink'), kartsDiv);
+    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('atv', 'ATVs', 'orange'), kartsDiv);
+
     kartsDiv.insertBefore(createSelectAllVehicleButton('kart'), kartsTable);
     kartsDiv.insertBefore(createDeselectAllVehicleButton('kart'), kartsTable);
     kartsTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'kart'));
@@ -710,6 +807,58 @@ createDeselectAllVehicleButton = (vehicleType) => {
         }
     };
     return deselectButton;
+}
+
+createSelectAllVehiclesButton = () => {
+    let selectButton = document.createElement('button');
+    selectButton.innerHTML = 'Select All';
+    selectButton.id = 'btnSelectAll-Vehicles';
+    selectButton.classList.add('button');
+    selectButton.classList.add('selectAllButton');
+    selectButton.onclick = () => {
+        let selectedVehicles = vehicles.filter(x => !x.selectable);
+        for(let i = 0; i < selectedVehicles.length; i++){
+            selectVehicle(selectedVehicles[i].id, true);
+        }
+    };
+    return selectButton;
+}
+
+createDeselectAllVehiclesButton = () => {
+    let deselectButton = document.createElement('button');
+    deselectButton.innerHTML = 'Deselect All';
+    deselectButton.id = 'btnDeselectAll-Vehicles';
+    deselectButton.classList.add('button');
+    deselectButton.classList.add('deselectAllButton');
+    deselectButton.onclick = () => {
+        let selectedVehicles = vehicles.filter(x => x.selectable);
+        for(let i = 0; i < selectedVehicles.length; i++){
+            selectVehicle(selectedVehicles[i].id, false);
+        }
+    };
+    return deselectButton;
+}
+
+createSelectOnlyVehiclesButton = (vehicleType, buttonText, color) => {
+    let selectOnlyVehiclesButton = document.createElement('button');
+    let vehicleTypeCapitalaized = vehicleType.charAt(0).toUpperCase() + vehicleType.slice(1);
+
+    selectOnlyVehiclesButton.innerHTML = 'Select Only '+ buttonText;
+    selectOnlyVehiclesButton.id = 'btnSelectOnly' + vehicleTypeCapitalaized + 'Vehicles';
+    selectOnlyVehiclesButton.classList.add('button');
+    selectOnlyVehiclesButton.classList.add(color + 'Button');
+    selectOnlyVehiclesButton.onclick = () => {
+        let selectedVehicles = vehicles.filter(x => x.type == vehicleType);
+        for(let i = 0; i < selectedVehicles.length; i++){
+            selectVehicle(selectedVehicles[i].id, true);
+        }
+
+        let unselectedVehicles = vehicles.filter(x => x.type != vehicleType);
+        for(let i = 0; i < unselectedVehicles.length; i++){
+            selectVehicle(unselectedVehicles[i].id, false);
+        }
+    };
+    return selectOnlyVehiclesButton;
 }
 
 //################## Tires Stuff ##################

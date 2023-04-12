@@ -43,16 +43,17 @@
 }
 
 .button{
-    width: 136px;
-    height: 40px;
+    width: 67px;
+    height: 65px;
     transition-duration: 0.5s;
     margin-left: 2px;
+    color:black;
+    vertical-align: top;
 }
 
 .selectAllButton{
     background-color: #accbfc;
     font-weight: bold;
-    color: white;
     border: 2px solid blue;
 }
 
@@ -64,11 +65,54 @@
 .deselectAllButton{
     background-color: #fcacac;
     font-weight: bold;
-    color: white;
     border: 2px solid red;
 }
 
 .deselectAllButton:hover{
+    background-color: white;
+    color:black;
+}
+
+.greenButton{
+    background-color: #ACFCC2;
+    font-weight: bold;
+    border: 2px solid green;
+}
+
+.greenButton:hover{
+    background-color: white;
+    color:black;
+}
+
+.yellowButton{
+    background-color: #Fbffd1;
+    font-weight: bold;
+    border: 2px solid yellow;
+}
+
+.yellowButton:hover{
+    background-color: white;
+    color:black;
+}
+
+.pinkButton{
+    background-color: #FCACEF;
+    font-weight: bold;
+    border: 2px solid orchid;
+}
+
+.pinkButton:hover{
+    background-color: white;
+    color:black;
+}
+
+.orangeButton{
+    background-color: #FCD6AC;
+    font-weight: bold;
+    border: 2px solid orangered;
+}
+
+.orangeButton:hover{
     background-color: white;
     color:black;
 }
