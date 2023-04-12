@@ -339,8 +339,8 @@ createCharactersTable = () => {
     charactersDiv.insertBefore(createDeselectAllCharactersButton(), charactersTable);
     charactersDiv.insertBefore(createSelectOnlyCharactersButton('small', 'green'), charactersTable);
     charactersDiv.insertBefore(createDeselectCharactersButton('small', 'green'), charactersTable);
-    charactersDiv.insertBefore(createSelectOnlyCharactersButton('medium', 'yellow'), charactersTable);
-    charactersDiv.insertBefore(createDeselectCharactersButton('medium', 'yellow'), charactersTable);
+    charactersDiv.insertBefore(createSelectOnlyCharactersButton('medium', 'orange'), charactersTable);
+    charactersDiv.insertBefore(createDeselectCharactersButton('medium', 'orange'), charactersTable);
     charactersDiv.insertBefore(createSelectOnlyCharactersButton('large', 'pink'), charactersTable);
     charactersDiv.insertBefore(createDeselectCharactersButton('large', 'pink'), charactersTable);
 }
