@@ -1,3 +1,8 @@
+#buildTableAndBtnDiv{
+    display: flex;
+    align-items: center;
+}
+
 .charactersIcon{
     width: 50%;
 }
@@ -14,14 +19,26 @@
     width: 80%;
 }
 
+.randomParts{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    border: 2px solid black;
+    border-radius: 10%;
+    background-color: white;
+    width: 130px;
+    height: 102px;
+}
+
 .selectableCell{
     text-align: center;
     font-weight: bold;
     font-family: 'Times New Roman';
     border: 2px solid blue;
+    border-radius: 10%;
     background-color: #accbfc;
     width: 130px;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
 }
 
 .selectableCell:hover{
@@ -33,9 +50,10 @@
     font-weight: bold;
     font-family: 'Times New Roman';
     border: 2px solid red;
+    border-radius: 10%;
     background-color: #fcacac;
     width: 130px;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
 }
 
 .unselectableCell:hover{
@@ -45,9 +63,10 @@
 .button{
     width: 67px;
     height: 65px;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
     margin-left: 2px;
     color:black;
+    border-radius: 10%;
     vertical-align: top;
 }
 
@@ -115,4 +134,14 @@
 .orangeButton:hover{
     background-color: white;
     color:black;
+}
+
+.randomizeButton{
+    font-weight: bold;
+    text-align: center;
+    border: 0px;
+    width: 136px;
+    height: 50px;
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    background-color: rgba(255,255,0,1);
 }

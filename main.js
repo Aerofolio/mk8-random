@@ -275,14 +275,14 @@ const characters = [
     },
     {
         imagePath: 'images/characters/villagerMale_icon.png',
-        name: 'Villager(Male)',
+        name: 'Villager (Male)',
         id: 40,
         selectable: true,
         type: 'medium'
     },
     {
         imagePath: 'images/characters/villagerFemale_icon.png',
-        name: 'Villager(Female)',
+        name: 'Villager (Female)',
         id: 41,
         selectable: true,
         type: 'medium'
@@ -1225,6 +1225,77 @@ createDeselectAllGlidersButton = () => {
     return deselectButton;
 }
 
+//################## Build Randomizer Stuff ##################
+createBuildRandomizerTable = () => {
+    const numberOfRandomizedParts = 4;
+    let buildTableInnerHTML = '',
+        buildTable = document.getElementById('buildTable');
+
+    buildTableInnerHTML += '<tr>';
+    for(let i = 0; i < numberOfRandomizedParts; i++){
+        switch(i){
+            case 0:
+                buildTableInnerHTML += '<td id="randomCharacter" class="randomParts">';
+                buildTableInnerHTML += '<span id="randomCharacterName"></span>';
+                buildTableInnerHTML += '<br>';
+                buildTableInnerHTML += '<img id="randomCharacterImage" class="charactersIcon">';
+                buildTableInnerHTML += '</td>';
+                break;
+            case 1:
+                buildTableInnerHTML += '<td id="randomVehicle" class="randomParts">';
+                buildTableInnerHTML += '<span id="randomVehicleName"></span>';
+                buildTableInnerHTML += '<br>';
+                buildTableInnerHTML += '<img id="randomVehicleImage" class="vehiclePart">';
+                buildTableInnerHTML += '</td>';
+                break;
+            case 2:
+                buildTableInnerHTML += '<td id="randomTire" class="randomParts">';
+                buildTableInnerHTML += '<span id="randomTireName"></span>';
+                buildTableInnerHTML += '<br>';
+                buildTableInnerHTML += '<img id="randomTireImage" class="tireIcon">';
+                buildTableInnerHTML += '</td>';
+                break;
+            case 3:
+                buildTableInnerHTML += '<td id="randomGlider" class="randomParts">';
+                buildTableInnerHTML += '<span id="randomGliderName"></span>';
+                buildTableInnerHTML += '<br>';
+                buildTableInnerHTML += '<img id="randomGliderImage" class="gliderIcon">';
+                buildTableInnerHTML += '</td>';
+                break;
+        }
+    }
+    buildTableInnerHTML += '</tr>';
+    buildTable.innerHTML = buildTableInnerHTML;
+
+    let randomizeButton = document.createElement('button');
+    randomizeButton.innerHTML = 'Randomize!';
+    randomizeButton.id = 'btnRandomize';
+    randomizeButton.classList.add('randomizeButton');
+    randomizeButton.onclick = () => {
+        let avaliableCharacters = characters.filter(x => x.selectable);
+        let avaliableVehicles = vehicles.filter(x => x.selectable);
+        let avaliableTires = tires.filter(x => x.selectable);
+        let avaliableGliders = gliders.filter(x => x.selectable);
+
+        //validadar se existe algum azul
+        let randomizedCharacter = avaliableCharacters[getRandomIntBetween(0, avaliableCharacters.length - 1)];
+        let randomizedVehicle = avaliableVehicles[getRandomIntBetween(0, avaliableVehicles.length - 1)];
+        let randomizedTire = avaliableTires[getRandomIntBetween(0, avaliableTires.length - 1)];
+        let randomizedGlider = avaliableGliders[getRandomIntBetween(0, avaliableGliders.length - 1)];
+
+        document.getElementById('randomCharacterName').innerHTML = randomizedCharacter.name;
+        document.getElementById('randomCharacterImage').src = randomizedCharacter.imagePath;
+        document.getElementById('randomVehicleName').innerHTML = randomizedVehicle.name;
+        document.getElementById('randomVehicleImage').src = randomizedVehicle.imagePath;
+        document.getElementById('randomTireName').innerHTML = randomizedTire.name;
+        document.getElementById('randomTireImage').src = randomizedTire.imagePath;
+        document.getElementById('randomGliderName').innerHTML = randomizedGlider.name;
+        document.getElementById('randomGliderImage').src = randomizedGlider.imagePath;
+    };
+
+    buildTable.after(randomizeButton);
+}
+
 //################## Util ##################
 changeSelectableBorderColor = (element) => {
     let characterHTMLCell = document.getElementById(element.name + '-' + element.id);
@@ -1235,9 +1306,16 @@ changeSelectableBorderColor = (element) => {
         characterHTMLCell.classList.replace('selectableCell', 'unselectableCell');
 }
 
+getRandomIntBetween = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 //################## Start ##################
 const numberOfColumns = 7;
 createCharactersTable();
 createVehiclesTables();
 createTiresTable();
 createGlidersTable();
+createBuildRandomizerTable();
