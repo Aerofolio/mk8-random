@@ -312,10 +312,10 @@ selectCharacter = (characterId, value) => {
 }
 
 createCharactersTable = () => {
-    let charactersTableInnerHTML = '',
-        column = 0,
-        charactersTable = document.getElementById('charactersTable'),
-        charactersDiv = document.getElementById('charactersDiv');
+    let charactersTableInnerHTML = '';
+    let column = 0;
+    let charactersTable = document.getElementById('charactersTable');
+    let charactersDiv = document.getElementById('charactersDiv');
 
     for(let i = 0; i < characters.length; i++){
         if(column == 0) charactersTableInnerHTML += '<tr>';
@@ -335,14 +335,29 @@ createCharactersTable = () => {
     }
     
     charactersTable.innerHTML = charactersTableInnerHTML;
-    charactersDiv.insertBefore(createSelectAllCharactersButton(), charactersTable);
-    charactersDiv.insertBefore(createDeselectAllCharactersButton(), charactersTable);
-    charactersDiv.insertBefore(createSelectOnlyCharactersButton('small', 'green'), charactersTable);
-    charactersDiv.insertBefore(createDeselectCharactersButton('small', 'green'), charactersTable);
-    charactersDiv.insertBefore(createSelectOnlyCharactersButton('medium', 'orange'), charactersTable);
-    charactersDiv.insertBefore(createDeselectCharactersButton('medium', 'orange'), charactersTable);
-    charactersDiv.insertBefore(createSelectOnlyCharactersButton('large', 'pink'), charactersTable);
-    charactersDiv.insertBefore(createDeselectCharactersButton('large', 'pink'), charactersTable);
+    charactersDiv.classList.add('tableSection');
+    charactersDiv.classList.add('partSection');
+    createCharatersButtonsDiv();
+}
+
+createCharatersButtonsDiv = () => {
+    let charactersAndBtnDiv = document.getElementById('charactersAndBtnDiv');
+    let charactersTable = document.getElementById('charactersTable');
+
+    let charactersButtonsDiv = document.createElement('div');
+    charactersButtonsDiv.id = 'charactersButtonsDiv';
+    charactersButtonsDiv.classList.add('buttonsDiv');
+
+    charactersAndBtnDiv.insertBefore(charactersButtonsDiv, charactersTable);
+    charactersAndBtnDiv.classList.add('tableWithButtons');
+    charactersButtonsDiv.append(createSelectAllCharactersButton());
+    charactersButtonsDiv.append(createDeselectAllCharactersButton());
+    charactersButtonsDiv.append(createSelectOnlyCharactersButton('small', 'green'));
+    charactersButtonsDiv.append(createDeselectCharactersButton('small', 'green'));
+    charactersButtonsDiv.append(createSelectOnlyCharactersButton('medium', 'orange'));
+    charactersButtonsDiv.append(createDeselectCharactersButton('medium', 'orange'));
+    charactersButtonsDiv.append(createSelectOnlyCharactersButton('large', 'pink'));
+    charactersButtonsDiv.append(createDeselectCharactersButton('large', 'pink'));
 }
 
 createSelectAllCharactersButton = () => {
@@ -716,42 +731,76 @@ selectVehicle = (vehicleId, value) => {
 }
 
 createVehiclesTables = () => {
-    let kartsTable = document.getElementById('kartsTable'),
-        kartsDiv = document.getElementById('kartsDiv'),
+    let kartsTable = document.getElementById('kartsTable');
+    let kartsDiv = document.getElementById('kartsDiv');
+    let kartsAndBtnDiv = document.getElementById('kartsAndBtnDiv');
 
-        standartBikesTable = document.getElementById('standartBikesTable'),
-        standartBikesDiv = document.getElementById('standartBikesDiv'),
+    let standartBikesTable = document.getElementById('standartBikesTable');
+    let standartBikesDiv = document.getElementById('standartBikesDiv');
+    let standartBikesAndBtnDiv = document.getElementById('standartBikesAndBtnDiv');
 
-        sportBikesTable = document.getElementById('sportBikesTable'),
-        sportBikesDiv = document.getElementById('sportBikesDiv'),
+    let sportBikesTable = document.getElementById('sportBikesTable');
+    let sportBikesDiv = document.getElementById('sportBikesDiv');
+    let sportBikesAndBtnDiv = document.getElementById('sportBikesAndBtnDiv');
 
-        atvsTable = document.getElementById('atvsTable'),
-        atvsDiv = document.getElementById('atvsDiv')
-        
-        vehiclesDiv = document.getElementById('vehiclesDiv');
-    
+    let atvsTable = document.getElementById('atvsTable');
+    let atvsDiv = document.getElementById('atvsDiv');
+    let atvsAndBtnDiv = document.getElementById('atvsAndBtnDiv');
 
-    vehiclesDiv.insertBefore(createSelectAllVehiclesButton(), kartsDiv);
-    vehiclesDiv.insertBefore(createDeselectAllVehiclesButton(), kartsDiv);
-    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('kart', 'Karts', 'green'), kartsDiv);
-    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('standartBike', 'Stadart Bikes', 'yellow'), kartsDiv);
-    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('sportBike', 'Sport Bikes', 'pink'), kartsDiv);
-    vehiclesDiv.insertBefore(createSelectOnlyVehiclesButton('atv', 'ATVs', 'orange'), kartsDiv);
+    let vehiclesDiv = document.getElementById('vehiclesDiv');
 
-    kartsDiv.insertBefore(createSelectAllVehicleButton('kart'), kartsTable);
-    kartsDiv.insertBefore(createDeselectAllVehicleButton('kart'), kartsTable);
+    kartsDiv.classList.add('tableSection');
+    standartBikesDiv.classList.add('tableSection');
+    sportBikesDiv.classList.add('tableSection');
+    atvsDiv.classList.add('tableSection');
+    vehiclesDiv.classList.add('tableSection');
+    vehiclesDiv.classList.add('partSection');
+
+    let vehicleButtonsDiv = document.createElement('div');
+    vehicleButtonsDiv.id = 'vehicleButtonsDiv';
+    vehicleButtonsDiv.classList.add('buttonsDiv');
+    vehicleButtonsDiv.append(createSelectAllVehiclesButton());
+    vehicleButtonsDiv.append(createDeselectAllVehiclesButton());
+    vehicleButtonsDiv.append(createSelectOnlyVehiclesButton('kart', 'Karts', 'green'));
+    vehicleButtonsDiv.append(createSelectOnlyVehiclesButton('standartBike', 'Stadart Bikes', 'yellow'));
+    vehicleButtonsDiv.append(createSelectOnlyVehiclesButton('sportBike', 'Sport Bikes', 'pink'));
+    vehicleButtonsDiv.append(createSelectOnlyVehiclesButton('atv', 'ATVs', 'orange'));
+    vehiclesDiv.insertBefore(vehicleButtonsDiv, kartsDiv);
+
+    let kartsButtonsDiv = document.createElement('div');
+    kartsButtonsDiv.id = 'kartsButtonsDiv';
+    kartsButtonsDiv.classList.add('buttonsDiv');
+    kartsAndBtnDiv.insertBefore(kartsButtonsDiv, kartsTable);
+    kartsAndBtnDiv.classList.add('tableWithButtons');
+    kartsButtonsDiv.append(createSelectAllVehicleButton('kart'));
+    kartsButtonsDiv.append(createDeselectAllVehicleButton('kart'));
     kartsTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'kart'));
 
-    standartBikesDiv.insertBefore(createSelectAllVehicleButton('standartBike'), standartBikesTable);
-    standartBikesDiv.insertBefore(createDeselectAllVehicleButton('standartBike'), standartBikesTable);
+    let standartBikesButtonsDiv = document.createElement('div');
+    standartBikesButtonsDiv.id = 'standartBikesButtonsDiv';
+    standartBikesButtonsDiv.classList.add('buttonsDiv');
+    standartBikesAndBtnDiv.insertBefore(standartBikesButtonsDiv, standartBikesTable);
+    standartBikesAndBtnDiv.classList.add('tableWithButtons');
+    standartBikesButtonsDiv.append(createSelectAllVehicleButton('standartBike'));
+    standartBikesButtonsDiv.append(createDeselectAllVehicleButton('standartBike'));
     standartBikesTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'standartBike'));
 
-    sportBikesDiv.insertBefore(createSelectAllVehicleButton('sportBike'), sportBikesTable);
-    sportBikesDiv.insertBefore(createDeselectAllVehicleButton('sportBike'), sportBikesTable);
+    let sportBikesButtonsDiv = document.createElement('div');
+    sportBikesButtonsDiv.id = 'sportBikesButtonsDiv';
+    sportBikesButtonsDiv.classList.add('buttonsDiv');
+    sportBikesAndBtnDiv.insertBefore(sportBikesButtonsDiv, sportBikesTable);
+    sportBikesAndBtnDiv.classList.add('tableWithButtons');
+    sportBikesButtonsDiv.append(createSelectAllVehicleButton('sportBike'));
+    sportBikesButtonsDiv.append(createDeselectAllVehicleButton('sportBike'));
     sportBikesTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'sportBike'));
 
-    atvsDiv.insertBefore(createSelectAllVehicleButton('atv'), atvsTable);
-    atvsDiv.insertBefore(createDeselectAllVehicleButton('atv'), atvsTable);
+    let atvsButtonsDiv = document.createElement('div');
+    atvsButtonsDiv.id = 'atvsButtonsDiv';
+    atvsButtonsDiv.classList.add('buttonsDiv');
+    atvsAndBtnDiv.insertBefore(atvsButtonsDiv, atvsTable);
+    atvsAndBtnDiv.classList.add('tableWithButtons');
+    atvsButtonsDiv.append(createSelectAllVehicleButton('atv'));
+    atvsButtonsDiv.append(createDeselectAllVehicleButton('atv'));
     atvsTable.innerHTML = createVehicleTableHTML(vehicles.filter(x => x.type == 'atv'));
 }
 
@@ -1007,10 +1056,11 @@ selectTire= (tireId, value) => {
 }
 
 createTiresTable = () => {
-    let tiresTableInnerHTML = '',
-        column = 0,
-        tiresTable = document.getElementById('tiresTable'),
-        tiresDiv = document.getElementById('tiresDiv');
+    let tiresTableInnerHTML = '';
+    let column = 0;
+    let tiresTable = document.getElementById('tiresTable');
+    let tiresAndBtnDiv = document.getElementById('tiresAndBtnDiv');
+    let tiresDiv = document.getElementById('tiresDiv');
 
     for(let i = 0; i < tires.length; i++){
         if(column == 0) tiresTableInnerHTML += '<tr>';
@@ -1030,8 +1080,16 @@ createTiresTable = () => {
     }
     
     tiresTable.innerHTML = tiresTableInnerHTML;
-    tiresDiv.insertBefore(createSelectAllTiresButton(), tiresTable);
-    tiresDiv.insertBefore(createDeselectAllTiresButton(), tiresTable);
+    tiresDiv.classList.add('tableSection');
+    tiresDiv.classList.add('partSection');
+
+    let tiresButtonsDiv = document.createElement('div');
+    tiresButtonsDiv.id = 'tiresButtonsDiv';
+    tiresButtonsDiv.classList.add('buttonsDiv');
+    tiresAndBtnDiv.insertBefore(tiresButtonsDiv, tiresTable);
+    tiresAndBtnDiv.classList.add('tableWithButtons');
+    tiresButtonsDiv.append(createSelectAllTiresButton());
+    tiresButtonsDiv.append(createDeselectAllTiresButton());
 }
 
 createSelectAllTiresButton = () => {
@@ -1168,10 +1226,11 @@ selectGlider = (gliderId, value) => {
 }
 
 createGlidersTable = () => {
-    let glidersTableInnerHTML = '',
-        column = 0,
-        glidersTable = document.getElementById('glidersTable'),
-        glidersDiv = document.getElementById('glidersDiv');
+    let glidersTableInnerHTML = '';
+    let column = 0;
+    let glidersTable = document.getElementById('glidersTable');
+    let glidersAndBtnDiv = document.getElementById('glidersAndBtnDiv');
+    let glidersDiv = document.getElementById('glidersDiv');
 
     for(let i = 0; i < gliders.length; i++){
         if(column == 0) glidersTableInnerHTML += '<tr>';
@@ -1191,8 +1250,16 @@ createGlidersTable = () => {
     }
     
     glidersTable.innerHTML = glidersTableInnerHTML;
-    glidersDiv.insertBefore(createSelectAllGlidersButton(), glidersTable);
-    glidersDiv.insertBefore(createDeselectAllGlidersButton(), glidersTable);
+    glidersDiv.classList.add('tableSection');
+    glidersDiv.classList.add('partSection');
+
+    let glidersButtonsDiv = document.createElement('div');
+    glidersButtonsDiv.id = 'glidersButtonsDiv';
+    glidersButtonsDiv.classList.add('buttonsDiv');
+    glidersAndBtnDiv.insertBefore(glidersButtonsDiv, glidersTable);
+    glidersAndBtnDiv.classList.add('tableWithButtons');
+    glidersButtonsDiv.append(createSelectAllGlidersButton());
+    glidersButtonsDiv.append(createDeselectAllGlidersButton());
 }
 
 createSelectAllGlidersButton = () => {
@@ -1228,9 +1295,14 @@ createDeselectAllGlidersButton = () => {
 //################## Build Randomizer Stuff ##################
 createBuildRandomizerTable = () => {
     const numberOfRandomizedParts = 4;
-    let buildTableInnerHTML = '',
-        buildTable = document.getElementById('buildTable');
+    let buildTableInnerHTML = '';
+    let buildTable = document.getElementById('buildTable');
+    let buildDiv = document.getElementById('buildDiv');
+    let buildTableAndBtnDiv = document.getElementById('buildTableAndBtnDiv');
 
+    buildDiv.classList.add('partSection');
+    buildDiv.classList.add('tableSection');
+    buildTableAndBtnDiv.classList.add('buttonsDiv');
     buildTableInnerHTML += '<tr>';
     for(let i = 0; i < numberOfRandomizedParts; i++){
         switch(i){
@@ -1238,28 +1310,28 @@ createBuildRandomizerTable = () => {
                 buildTableInnerHTML += '<td id="randomCharacter" class="randomParts">';
                 buildTableInnerHTML += '<span id="randomCharacterName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomCharacterImage" class="charactersIcon">';
+                buildTableInnerHTML += '<img id="randomCharacterImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
             case 1:
                 buildTableInnerHTML += '<td id="randomVehicle" class="randomParts">';
                 buildTableInnerHTML += '<span id="randomVehicleName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomVehicleImage" class="vehiclePart">';
+                buildTableInnerHTML += '<img id="randomVehicleImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
             case 2:
                 buildTableInnerHTML += '<td id="randomTire" class="randomParts">';
                 buildTableInnerHTML += '<span id="randomTireName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomTireImage" class="tireIcon">';
+                buildTableInnerHTML += '<img id="randomTireImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
             case 3:
                 buildTableInnerHTML += '<td id="randomGlider" class="randomParts">';
                 buildTableInnerHTML += '<span id="randomGliderName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomGliderImage" class="gliderIcon">';
+                buildTableInnerHTML += '<img id="randomGliderImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
         }
@@ -1291,6 +1363,10 @@ createBuildRandomizerTable = () => {
         document.getElementById('randomTireImage').src = randomizedTire.imagePath;
         document.getElementById('randomGliderName').innerHTML = randomizedGlider.name;
         document.getElementById('randomGliderImage').src = randomizedGlider.imagePath;
+
+        document.getElementById('randomVehicleImage').classList.replace('charactersIcon', 'vehiclePart');
+        document.getElementById('randomTireImage').classList.replace('charactersIcon', 'tireIcon');
+        document.getElementById('randomGliderImage').classList.replace('charactersIcon', 'gliderIcon');
     };
 
     buildTable.after(randomizeButton);
@@ -1313,7 +1389,7 @@ getRandomIntBetween = (min, max) => {
 }
 
 //################## Start ##################
-const numberOfColumns = 7;
+const numberOfColumns = 8;
 createCharactersTable();
 createVehiclesTables();
 createTiresTable();

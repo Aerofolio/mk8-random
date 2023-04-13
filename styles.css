@@ -3,6 +3,55 @@
     align-items: center;
 }
 
+#siteBorderDiv{
+    position: relative;
+    border: 8px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(45deg,rgb(45, 129, 255), rgb(229, 99, 255));
+    background-clip: padding-box;
+    padding: 10px;
+    /* just to show box-shadow still works fine */
+    box-shadow: 0 3px 9px black, inset 0 0 9px white;
+
+    width: 80%;
+    padding: 50px;
+    margin:auto;
+}
+
+#siteBorderDiv:after{
+    position: absolute;
+    top: -8px; bottom: -8px;
+    left: -8px; right: -8px;
+    background: linear-gradient(45deg, red, blue);
+    content: '';
+    z-index: -1;
+    border-radius: 50px;
+}
+
+#logo{
+    width: 30%;
+    border: 0;
+}
+
+table{
+    border-spacing: 15px;
+}
+
+h2{
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 0 3px 9px black;
+    margin-top: 5px;
+}
+
+h3{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 0 3px 9px black;
+}
+
 .charactersIcon{
     width: 50%;
 }
@@ -22,23 +71,26 @@
 .randomParts{
     text-align: center;
     font-weight: bold;
-    font-family: 'Times New Roman';
-    border: 2px solid black;
-    border-radius: 10%;
-    background-color: white;
-    width: 130px;
-    height: 102px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: #accbfc;
+    width: 150px;
+    height: 115px;
+    box-shadow: 0 3px 5px black, inset 0 0 5px white;
 }
 
 .selectableCell{
     text-align: center;
     font-weight: bold;
-    font-family: 'Times New Roman';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 2px solid blue;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: #accbfc;
-    width: 130px;
+    width: 150px;
+    height: 115px;
     transition-duration: 0.4s;
+    box-shadow: 0 3px 5px black, inset 0 0 5px white;
 }
 
 .selectableCell:hover{
@@ -48,12 +100,14 @@
 .unselectableCell{
     text-align: center;
     font-weight: bold;
-    font-family: 'Times New Roman';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 2px solid red;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: #fcacac;
-    width: 130px;
+    width: 150px;
+    height: 115px;
     transition-duration: 0.4s;
+    box-shadow: 0 3px 5px black, inset 0 0 5px white;
 }
 
 .unselectableCell:hover{
@@ -61,13 +115,15 @@
 }
 
 .button{
-    width: 67px;
+    width: 100px;
     height: 65px;
     transition-duration: 0.4s;
-    margin-left: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
     color:black;
-    border-radius: 10%;
+    border-radius: 10px;
     vertical-align: top;
+    box-shadow: 0 3px 5px black, inset 0 0 5px white;
 }
 
 .selectAllButton{
@@ -144,4 +200,35 @@
     height: 50px;
     clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
     background-color: rgba(255,255,0,1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttonsDiv{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.tableWithButtons{
+    width: fit-content;
+    height: fit-content;
+}
+
+.tableSection{
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    margin: auto;
+}
+
+.partSection{
+    position: relative;
+    border: 8px solid transparent;
+    border-radius: 50px;
+    background: transparent;
+    background-clip: padding-box;
+    padding: 10px;
+    /* just to show box-shadow still works fine */
+    box-shadow: 0 3px 9px black;
+    margin-top: 25px;
 }
