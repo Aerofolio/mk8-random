@@ -65,7 +65,7 @@ h3{
 }
 
 .gliderIcon{
-    width: 80%;
+    width: 90%;
 }
 
 .randomParts{
@@ -75,6 +75,18 @@ h3{
     border: 2px solid blue;
     border-radius: 10px;
     background-color: #accbfc;
+    width: 150px;
+    height: 115px;
+    box-shadow: 0 3px 5px black, inset 0 0 5px white;
+}
+
+.errorRandomParts{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: #fcacac;
     width: 150px;
     height: 115px;
     box-shadow: 0 3px 5px black, inset 0 0 5px white;
@@ -192,15 +204,16 @@ h3{
     color:black;
 }
 
-.randomizeButton{
-    font-weight: bold;
-    text-align: center;
-    border: 0px;
-    width: 136px;
+.cellSizeButton{
+    width: 150px;
     height: 50px;
-    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
-    background-color: rgba(255,255,0,1);
+    transition-duration: 0.4s;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px;
+    color:black;
+    border-radius: 10px;
+    vertical-align: top;
+    box-shadow: 0 3px 5px black, inset 0 0 5px white;
 }
 
 .buttonsDiv{
