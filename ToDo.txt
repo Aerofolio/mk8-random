@@ -4,14 +4,15 @@
     - Select only babys
     
 - Colocar um footer com os direitos reservados para a nintendo, etc
-- Talvez colocar um efeito ao passar o mouse por cima de uma das células, para indicar melhro que elas são clicaveis
-- erro se todos estiverem vermelhos
+- OK Talvez colocar um efeito ao passar o mouse por cima de uma das células, para indicar melhro que elas são clicaveis
+- OK erro se todos estiverem vermelhos
 - Randomizador de copa
 - Double click seleciona apenas oq vc cliclou
-- Padronizar o tamanho de todos os quadradinhos
-- Inicializar Campos de radomizador com interrogações
-- Melhorar estilo do site no geral
-    - Fonte dos quadradinhos
-    - Botao de randomizar
+- OK Padronizar o tamanho de todos os quadradinhos
+- OK Inicializar Campos de radomizador com interrogações
+- OK Melhorar estilo do site no geral
+    - OK Fonte dos quadradinhos
+    - OK Botao de randomizar
     - Fundo do site
-    - Titulos
+    - Part Section do build randomizer esquisito
+    - OK Titulos
