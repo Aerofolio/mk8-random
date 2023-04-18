@@ -135,72 +135,72 @@ h3{
     color:black;
     border-radius: 10px;
     vertical-align: top;
-    box-shadow: 0 3px 5px black, inset 0 0 5px white;
+    box-shadow: 0 3px 5px black;
 }
 
-.selectAllButton{
-    background-color: #accbfc;
+.blueButton{
+    background: linear-gradient(0deg,#accbfc, transparent)#498fff;
     font-weight: bold;
     border: 2px solid blue;
 }
 
-.selectAllButton:hover{
-    background-color: white;
+.blueButton:hover{
+    background-color: #accbfc;
     color:black;
 }
 
-.deselectAllButton{
-    background-color: #fcacac;
+.redButton{
+    background: linear-gradient(0deg,#fcacac, transparent)#ff4d4d;
     font-weight: bold;
     border: 2px solid red;
 }
 
-.deselectAllButton:hover{
-    background-color: white;
+.redButton:hover{
+    background-color: #fcacac;
     color:black;
 }
 
 .greenButton{
-    background-color: #ACFCC2;
+    background: linear-gradient(0deg,#ACFCC2, transparent)#00d63d;
     font-weight: bold;
     border: 2px solid green;
 }
 
 .greenButton:hover{
-    background-color: white;
+    background-color: #ACFCC2;
     color:black;
 }
 
 .yellowButton{
-    background-color: #Fbffd1;
+    background: linear-gradient(0deg,#Fbffd1, transparent)#eaff00;
     font-weight: bold;
-    border: 2px solid yellow;
+    border: 2px solid rgb(255, 255, 0);
 }
 
 .yellowButton:hover{
-    background-color: white;
+    background-color: #Fbffd1;
     color:black;
 }
 
 .pinkButton{
-    background-color: #FCACEF;
+    background: linear-gradient(0deg,#ffc2f5, transparent)rgb(255, 112, 250);
     font-weight: bold;
-    border: 2px solid orchid;
+    border: 2px solid rgb(218, 55, 212);
 }
 
 .pinkButton:hover{
-    background-color: white;
+    background-color: #ffc2f5;
     color:black;
 }
 
 .orangeButton{
-    background-color: #FCD6AC;
+    background: linear-gradient(0deg,#FCD6AC, transparent)#ff9317;
     font-weight: bold;
     border: 2px solid orangered;
 }
 
 .orangeButton:hover{
-    background-color: white;
+    background-color: #FCD6AC;
     color:black;
 }
 
