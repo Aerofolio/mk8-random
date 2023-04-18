@@ -1,18 +1,22 @@
 - OK Para os Veiculos colocar a opção de selecionar/desselecionar todos os veiculos de uma classe de uma só vez, por exemplo: desselecionar todas as motos
     - OK Tentar aplicar essa ideia a outras partes, como desselecionar todos os personagens baby, etc.., desleceionar personagens por tamanh..
-    - Select only koopalings
-    - Select only babys
     
-- Colocar um footer com os direitos reservados para a nintendo, etc
 - OK Talvez colocar um efeito ao passar o mouse por cima de uma das células, para indicar melhro que elas são clicaveis
 - OK erro se todos estiverem vermelhos
-- Randomizador de copa
-- Double click seleciona apenas oq vc cliclou
 - OK Padronizar o tamanho de todos os quadradinhos
 - OK Inicializar Campos de radomizador com interrogações
 - OK Melhorar estilo do site no geral
     - OK Fonte dos quadradinhos
     - OK Botao de randomizar
+    - OK Titulos
+
+- Adicionar tags corretas no head
+- Colocar um footer com os direitos reservados para a nintendo, etc
+- Select only koopalings
+- Select only babys
+- Randomizador de copa
+- Double click seleciona apenas oq vc cliclou
+- Estilo
     - Fundo do site
     - Part Section do build randomizer esquisito
-    - OK Titulos
+    - Mais cores de Botões, e talvez adicionar icones nos botões
