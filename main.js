@@ -1479,6 +1479,52 @@ getRandomIntBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+//################## Footer Stuff ##################
+createFooter = () => {
+    let siteBorderDiv = document.getElementById('siteBorderDiv');
+    let footerElement = document.createElement('footer');
+
+    let copyrightSpan = document.createElement('span');
+    copyrightSpan.innerHTML = '<strong>Copyright Disclaimer: </strong>This website is a fan-made project and is not affiliated with or endorsed by Nintendo, the creators of Mario Kart 8 Deluxe. All images, characters, and models used on this website are the property of their respective owners. The purpose of this website is solely for entertainment and educational purposes, and no copyright infringement is intended. If you believe that any content on this website violates copyright laws, please contact us immediately, and we will take appropriate action to rectify the situation.<br><br>';
+    footerElement.append(copyrightSpan);
+
+    let openSourceSpan = document.createElement('span');
+    openSourceSpan.innerHTML = 'This website was created by Paulo Bodaneze Reva. The code used to create this website is open source and can be used for free.<br><br>';
+    footerElement.append(openSourceSpan);
+
+    let socialSpan = document.createElement('span');
+
+    let socialSpanText = document.createElement('span');
+    socialSpanText.innerHTML = 'You can contact me using any of the following links:<br>';
+    socialSpan.append(socialSpanText);
+
+    let twitterSpan = document.createElement('a');
+    twitterSpan.href = 'https://twitter.com/BodanezeReva';
+    twitterSpan.innerHTML = 'Twitter';
+    twitterSpan.target = '_blank';
+    twitterSpan.rel = 'noopener noreferrer';
+    socialSpan.append(twitterSpan);
+
+    let linkedinSpan = document.createElement('a');
+    linkedinSpan.href = 'https://www.linkedin.com/in/paulo-bodaneze-reva-desenvolvedor/';
+    linkedinSpan.innerHTML = 'Linkedin'
+    linkedinSpan.target = '_blank';
+    linkedinSpan.rel = 'noopener noreferrer';
+    socialSpan.append(linkedinSpan);
+
+    let githubSpan = document.createElement('a');
+    githubSpan.href = 'https://github.com/Aerofolio';
+    githubSpan.innerHTML = 'GitHub'
+    githubSpan.target = '_blank';
+    githubSpan.rel = 'noopener noreferrer';
+    socialSpan.append(githubSpan);
+    
+    footerElement.append(socialSpan);
+    footerElement.classList.add('partSection');
+    footerElement.classList.add('footer');
+    siteBorderDiv.append(footerElement);
+}
+
 //################## Start ##################
 const numberOfColumns = 8;
 createCharactersTable();
@@ -1486,3 +1532,4 @@ createVehiclesTables();
 createTiresTable();
 createGlidersTable();
 createBuildRandomizerTable();
+createFooter();
