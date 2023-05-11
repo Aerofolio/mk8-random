@@ -1293,12 +1293,19 @@ createDeselectAllGlidersButton = () => {
 }
 
 //################## Build Randomizer Stuff ##################
-createBuildRandomizerTable = () => {
+createAllRandomizersTables = () => {
+    const numberOfRandomizers = 4;
+    for(let i = 0; i < numberOfRandomizers; i++){
+        createBuildRandomizerTable(i);
+    }
+}
+
+createBuildRandomizerTable = (buildNumber) => {
     const numberOfRandomizedParts = 4;
     let buildTableInnerHTML = '';
-    let buildTable = document.getElementById('buildTable');
+    let buildTable = document.getElementById('buildTable' + buildNumber);
     let buildDiv = document.getElementById('buildDiv');
-    let buildTableAndBtnDiv = document.getElementById('buildTableAndBtnDiv');
+    let buildTableAndBtnDiv = document.getElementById('buildTableAndBtnDiv' + buildNumber);
 
     buildDiv.classList.add('partSection');
     buildDiv.classList.add('tableSection');
@@ -1307,35 +1314,38 @@ createBuildRandomizerTable = () => {
     for(let i = 0; i < numberOfRandomizedParts; i++){
         switch(i){
             case 0:
-                buildTableInnerHTML += '<td id="randomCharacter" class="randomParts">';
-                buildTableInnerHTML += '<span id="randomCharacterName"></span>';
+                buildTableInnerHTML += '<td id="random' + buildNumber + 'Character" class="randomParts">';
+                buildTableInnerHTML += '<span id="random' + buildNumber + 'CharacterName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomCharacterImage" class="charactersIcon" src="images/other/interrogation.png">';
+                buildTableInnerHTML += '<img id="random' + buildNumber + 'CharacterImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
             case 1:
-                buildTableInnerHTML += '<td id="randomVehicle" class="randomParts">';
-                buildTableInnerHTML += '<span id="randomVehicleName"></span>';
+                buildTableInnerHTML += '<td id="random' + buildNumber + 'Vehicle" class="randomParts">';
+                buildTableInnerHTML += '<span id="random' + buildNumber + 'VehicleName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomVehicleImage" class="charactersIcon" src="images/other/interrogation.png">';
+                buildTableInnerHTML += '<img id="random' + buildNumber + 'VehicleImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
             case 2:
-                buildTableInnerHTML += '<td id="randomTire" class="randomParts">';
-                buildTableInnerHTML += '<span id="randomTireName"></span>';
+                buildTableInnerHTML += '<td id="random' + buildNumber + 'Tire" class="randomParts">';
+                buildTableInnerHTML += '<span id="random' + buildNumber + 'TireName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomTireImage" class="charactersIcon" src="images/other/interrogation.png">';
+                buildTableInnerHTML += '<img id="random' + buildNumber + 'TireImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
             case 3:
-                buildTableInnerHTML += '<td id="randomGlider" class="randomParts">';
-                buildTableInnerHTML += '<span id="randomGliderName"></span>';
+                buildTableInnerHTML += '<td id="random' + buildNumber + 'Glider" class="randomParts">';
+                buildTableInnerHTML += '<span id="random' + buildNumber + 'GliderName"></span>';
                 buildTableInnerHTML += '<br>';
-                buildTableInnerHTML += '<img id="randomGliderImage" class="charactersIcon" src="images/other/interrogation.png">';
+                buildTableInnerHTML += '<img id="random' + buildNumber + 'GliderImage" class="charactersIcon" src="images/other/interrogation.png">';
                 buildTableInnerHTML += '</td>';
                 break;
         }
     }
+    buildTableInnerHTML += '<td id="random' + buildNumber + 'ButtonCell" rowspan="2">';
+    buildTableInnerHTML += '</td>';
+
     buildTableInnerHTML += '</tr>';
 
     buildTableInnerHTML += '<tr>';
@@ -1345,7 +1355,7 @@ createBuildRandomizerTable = () => {
             case 0:
                 let rerollCharacterButton = document.createElement('button');
                 rerollCharacterButton.innerHTML = 'Reroll Character';
-                rerollCharacterButton.id = 'btnRerollCharacter'
+                rerollCharacterButton.id = 'btnReroll' + buildNumber + 'Character'
                 rerollCharacterButton.classList.add('button');
                 rerollCharacterButton.classList.add('yellowButton');
                 buildTableInnerHTML += rerollCharacterButton.outerHTML;
@@ -1353,7 +1363,7 @@ createBuildRandomizerTable = () => {
             case 1:
                 let rerollVehicleButton = document.createElement('button');
                 rerollVehicleButton.innerHTML = 'Reroll Vehicle';
-                rerollVehicleButton.id = 'btnRerollVehicle'
+                rerollVehicleButton.id = 'btnReroll' + buildNumber + 'Vehicle'
                 rerollVehicleButton.classList.add('button');
                 rerollVehicleButton.classList.add('greenButton');
                 buildTableInnerHTML += rerollVehicleButton.outerHTML;
@@ -1361,7 +1371,7 @@ createBuildRandomizerTable = () => {
             case 2:
                 let rerollTireButton = document.createElement('button');
                 rerollTireButton.innerHTML = 'Reroll Tire';
-                rerollTireButton.id = 'btnRerollTire'
+                rerollTireButton.id = 'btnReroll' + buildNumber + 'Tire'
                 rerollTireButton.classList.add('button');
                 rerollTireButton.classList.add('orangeButton');
                 rerollTireButton.onclick = () => {};
@@ -1370,7 +1380,7 @@ createBuildRandomizerTable = () => {
             case 3:
                 let rerollGliderButton = document.createElement('button');
                 rerollGliderButton.innerHTML = 'Reroll Glider';
-                rerollGliderButton.id = 'btnRerollGlider'
+                rerollGliderButton.id = 'btnReroll' + buildNumber + 'Glider'
                 rerollGliderButton.classList.add('button');
                 rerollGliderButton.classList.add('pinkButton');
                 rerollGliderButton.onclick = () => {};
@@ -1382,84 +1392,84 @@ createBuildRandomizerTable = () => {
     buildTableInnerHTML += '</tr>';
     buildTable.innerHTML = buildTableInnerHTML;
 
-    document.getElementById('btnRerollCharacter').onclick = randomizeCharacter;
-    document.getElementById('btnRerollVehicle').onclick = randomizeVehicle;
-    document.getElementById('btnRerollTire').onclick = randomizeTire;
-    document.getElementById('btnRerollGlider').onclick = randomizeGlider;
+    document.getElementById('btnReroll' + buildNumber + 'Character').onclick = () => randomizeCharacter(buildNumber);
+    document.getElementById('btnReroll' + buildNumber + 'Vehicle').onclick = () => randomizeVehicle(buildNumber);
+    document.getElementById('btnReroll' + buildNumber + 'Tire').onclick = () => randomizeTire(buildNumber);
+    document.getElementById('btnReroll' + buildNumber + 'Glider').onclick = () => randomizeGlider(buildNumber);
 
     let randomizeButton = document.createElement('button');
     randomizeButton.innerHTML = 'Randomize!';
-    randomizeButton.id = 'btnRandomize';
+    randomizeButton.id = 'btnRandomize' + buildNumber + '';
     randomizeButton.classList.add('cellSizeButton');
     randomizeButton.classList.add('yellowButton');
     randomizeButton.onclick = () => {
-        randomizeCharacter();
-        randomizeVehicle();
-        randomizeTire();
-        randomizeGlider();
+        randomizeCharacter(buildNumber);
+        randomizeVehicle(buildNumber);
+        randomizeTire(buildNumber);
+        randomizeGlider(buildNumber);
     };
-    buildTable.after(randomizeButton);
+    document.getElementById('random' + buildNumber + 'ButtonCell').appendChild(randomizeButton);
 }
 
-randomizeCharacter = () => {
+randomizeCharacter = (buildNumber) => {
     let avaliableCharacters = characters.filter(x => x.selectable);
     if(avaliableCharacters.length == 0){
-        document.getElementById('randomCharacterName').innerHTML = 'Error!';
-        document.getElementById('randomCharacterImage').src = 'images/other/interrogation.png';
-        document.getElementById('randomCharacter').classList.replace('randomParts', 'errorRandomParts');
+        document.getElementById('random' + buildNumber + 'CharacterName').innerHTML = 'Error!';
+        document.getElementById('random' + buildNumber + 'CharacterImage').src = 'images/other/interrogation.png';
+        document.getElementById('random' + buildNumber + 'Character').classList.replace('randomParts', 'errorRandomParts');
     }else{
         let randomizedCharacter = avaliableCharacters[getRandomIntBetween(0, avaliableCharacters.length - 1)];
-        document.getElementById('randomCharacterName').innerHTML = randomizedCharacter.name;
-        document.getElementById('randomCharacterImage').src = randomizedCharacter.imagePath;
-        document.getElementById('randomCharacter').classList.replace('errorRandomParts', 'randomParts');
+        document.getElementById('random' + buildNumber + 'CharacterName').innerHTML = randomizedCharacter.name;
+        document.getElementById('random' + buildNumber + 'CharacterImage').src = randomizedCharacter.imagePath;
+        document.getElementById('random' + buildNumber + 'Character').classList.replace('errorRandomParts', 'randomParts');
     }
 }
 
-randomizeVehicle = () =>{
+randomizeVehicle = (buildNumber) =>{
     let avaliableVehicles = vehicles.filter(x => x.selectable);
     if(avaliableVehicles.length == 0){
-        document.getElementById('randomVehicleName').innerHTML = 'Error!';
-        document.getElementById('randomVehicleImage').src = 'images/other/interrogation.png';
-        document.getElementById('randomVehicle').classList.replace('randomParts', 'errorRandomParts');
-        document.getElementById('randomVehicleImage').classList.replace('vehiclePart', 'charactersIcon');
+        document.getElementById('random' + buildNumber + 'VehicleName').innerHTML = 'Error!';
+        document.getElementById('random' + buildNumber + 'VehicleImage').src = 'images/other/interrogation.png';
+        document.getElementById('random' + buildNumber + 'Vehicle').classList.replace('randomParts', 'errorRandomParts');
+        document.getElementById('random' + buildNumber + 'VehicleImage').classList.replace('vehiclePart', 'charactersIcon');
     }else{
         let randomizedVehicle = avaliableVehicles[getRandomIntBetween(0, avaliableVehicles.length - 1)];
-        document.getElementById('randomVehicleName').innerHTML = randomizedVehicle.name;
-        document.getElementById('randomVehicleImage').src = randomizedVehicle.imagePath;
-        document.getElementById('randomVehicle').classList.replace('errorRandomParts', 'randomParts');
-        document.getElementById('randomVehicleImage').classList.replace('charactersIcon', 'vehiclePart');
+        document.getElementById('random' + buildNumber + 'VehicleName').innerHTML = randomizedVehicle.name;
+        document.getElementById('random' + buildNumber + 'VehicleImage').src = randomizedVehicle.imagePath;
+        document.getElementById('random' + buildNumber + 'Vehicle').classList.replace('errorRandomParts', 'randomParts');
+        document.getElementById('random' + buildNumber + 'VehicleImage').classList.replace('charactersIcon', 'vehiclePart');
     }
 }
 
-randomizeTire = () =>{
+randomizeTire = (buildNumber) =>{
     let avaliableTires = tires.filter(x => x.selectable);
     if(avaliableTires.length == 0){
-        document.getElementById('randomTireName').innerHTML = 'Error!';
-        document.getElementById('randomTireImage').src = 'images/other/interrogation.png';
-        document.getElementById('randomTire').classList.replace('randomParts', 'errorRandomParts');
-        document.getElementById('randomTireImage').classList.replace('vehiclePart', 'charactersIcon');
+        document.getElementById('random' + buildNumber + 'TireName').innerHTML = 'Error!';
+        document.getElementById('random' + buildNumber + 'TireImage').src = 'images/other/interrogation.png';
+        document.getElementById('random' + buildNumber + 'Tire').classList.replace('randomParts', 'errorRandomParts');
+        document.getElementById('random' + buildNumber + 'TireImage').classList.replace('vehiclePart', 'charactersIcon');
     }else{
         let randomizedTire = avaliableTires[getRandomIntBetween(0, avaliableTires.length - 1)];
-        document.getElementById('randomTireName').innerHTML = randomizedTire.name;
-        document.getElementById('randomTireImage').src = randomizedTire.imagePath;
-        document.getElementById('randomTire').classList.replace('errorRandomParts', 'randomParts');
-        document.getElementById('randomTireImage').classList.replace('charactersIcon', 'tireIcon');
+        document.getElementById('random' + buildNumber + 'TireName').innerHTML = randomizedTire.name;
+        document.getElementById('random' + buildNumber + 'TireImage').src = randomizedTire.imagePath;
+        document.getElementById('random' + buildNumber + 'Tire').classList.replace('errorRandomParts', 'randomParts');
+        document.getElementById('random' + buildNumber + 'TireImage').classList.replace('charactersIcon', 'tireIcon');
     }
 }
 
-randomizeGlider = () =>{
+randomizeGlider = (buildNumber) =>{
     let avaliableGliders = gliders.filter(x => x.selectable);
     if(avaliableGliders.length == 0){
-        document.getElementById('randomGliderName').innerHTML = 'Error!';
-        document.getElementById('randomGliderImage').src = 'images/other/interrogation.png';
-        document.getElementById('randomGlider').classList.replace('randomParts', 'errorRandomParts');
-        document.getElementById('randomGliderImage').classList.replace('vehiclePart', 'charactersIcon');
+        document.getElementById('random' + buildNumber + 'GliderName').innerHTML = 'Error!';
+        document.getElementById('random' + buildNumber + 'GliderImage').src = 'images/other/interrogation.png';
+        document.getElementById('random' + buildNumber + 'Glider').classList.replace('randomParts', 'errorRandomParts');
+        document.getElementById('random' + buildNumber + 'GliderImage').classList.replace('vehiclePart', 'charactersIcon');
     }else{
         let randomizedGlider = avaliableGliders[getRandomIntBetween(0, avaliableGliders.length - 1)];
-        document.getElementById('randomGliderName').innerHTML = randomizedGlider.name;
-        document.getElementById('randomGliderImage').src = randomizedGlider.imagePath;
-        document.getElementById('randomGlider').classList.replace('errorRandomParts', 'randomParts');
-        document.getElementById('randomGliderImage').classList.replace('charactersIcon', 'gliderIcon');
+        document.getElementById('random' + buildNumber + 'GliderName').innerHTML = randomizedGlider.name;
+        document.getElementById('random' + buildNumber + 'GliderImage').src = randomizedGlider.imagePath;
+        document.getElementById('random' + buildNumber + 'Glider').classList.replace('errorRandomParts', 'randomParts');
+        document.getElementById('random' + buildNumber + 'GliderImage').classList.replace('charactersIcon', 'gliderIcon');
     }
 }
 
@@ -1531,5 +1541,5 @@ createCharactersTable();
 createVehiclesTables();
 createTiresTable();
 createGlidersTable();
-createBuildRandomizerTable();
+createAllRandomizersTables();
 createFooter();

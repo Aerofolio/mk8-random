@@ -14,7 +14,7 @@
     box-shadow: 0 3px 9px black, inset 0 0 9px white;
 
     width: 80%;
-    padding: 50px;
+    padding-left: 50px; padding-right: 50px;
     margin:auto;
 }
 
@@ -107,6 +107,7 @@ h3{
     height: 115px;
     transition-duration: 0.4s;
     box-shadow: 0 3px 5px black, inset 0 0 5px white;
+    box-sizing: border-box;
 }
 
 .selectableCell:hover{
@@ -247,13 +248,16 @@ h3{
     padding: 10px;
     /* just to show box-shadow still works fine */
     box-shadow: 0 3px 9px black;
-    margin-top: 25px;
+    margin-top: 10px;
+    width: 90%;
 }
 
 .footer{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     text-align: justify;
+    margin: auto;
+    margin-top: 10px;
 }
 
 .footer a{
