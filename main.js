@@ -1399,7 +1399,7 @@ createBuildRandomizerTable = (buildNumber) => {
 
     let randomizeButton = document.createElement('button');
     randomizeButton.innerHTML = 'Randomize!';
-    randomizeButton.id = 'btnRandomize' + buildNumber + '';
+    randomizeButton.id = 'btnRandomize' + buildNumber;
     randomizeButton.classList.add('cellSizeButton');
     randomizeButton.classList.add('yellowButton');
     randomizeButton.onclick = () => {
@@ -1542,6 +1542,23 @@ createNumberOfPlayersButton = (playerNumber) => {
     document.getElementById('numberOfPlayersButtonsDiv').appendChild(playerButton);
 }
 
+createRandomizeAllButton = () => {
+    let randmozieAllButton = document.createElement('button');
+    randmozieAllButton.id = 'randomizeAllBtn';
+    randmozieAllButton.innerHTML = 'Randomize All!';
+    
+    randmozieAllButton.classList.add('cellSizeButton');
+    randmozieAllButton.classList.add('yellowButton');
+
+    randmozieAllButton.onclick = () => {
+        for(let i = 0; i < maxNumberOfPlayers; i++){
+            document.getElementById('btnRandomize' + i).onclick();
+        }
+    };
+    
+    document.getElementById('randmozieAllButtonDiv').appendChild(randmozieAllButton);
+}
+
 //################## Footer Stuff ##################
 createFooter = () => {
     let siteBorderDiv = document.getElementById('siteBorderDiv');
@@ -1595,5 +1612,6 @@ createVehiclesTables();
 createTiresTable();
 createGlidersTable();
 createNumberOfPlayersButtons();
+createRandomizeAllButton();
 createAllRandomizersTables();
 createFooter();
