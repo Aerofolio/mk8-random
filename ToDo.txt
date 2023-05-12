@@ -12,6 +12,8 @@
     - OK Botao de randomizar
     - OK Titulos
     - OK Fundo do site
+- OK Selecionar até 4 players
+
 
 - Select only koopalings
 - Select only babys
@@ -20,3 +22,4 @@
 - Estilo
     - Part Section do build randomizer esquisito
     - Mais cores de Botões, e talvez adicionar icones nos botões
+    - Melhorar para mobile
