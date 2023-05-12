@@ -1294,8 +1294,7 @@ createDeselectAllGlidersButton = () => {
 
 //################## Build Randomizer Stuff ##################
 createAllRandomizersTables = () => {
-    const numberOfRandomizers = 4;
-    for(let i = 0; i < numberOfRandomizers; i++){
+    for(let i = 0; i < maxNumberOfPlayers; i++){
         createBuildRandomizerTable(i);
     }
 }
@@ -1310,6 +1309,7 @@ createBuildRandomizerTable = (buildNumber) => {
     buildDiv.classList.add('partSection');
     buildDiv.classList.add('tableSection');
     buildTableAndBtnDiv.classList.add('buttonsDiv');
+    if(buildNumber > 0) buildTable.classList.add('displayNone');
     buildTableInnerHTML += '<tr>';
     for(let i = 0; i < numberOfRandomizedParts; i++){
         switch(i){
@@ -1489,6 +1489,59 @@ getRandomIntBetween = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+const maxNumberOfPlayers = 4;
+
+//################## Number of Players Buttons Stuff ##################
+createNumberOfPlayersButtons = () => {
+    for(let i = 0; i < maxNumberOfPlayers; i++){
+        createNumberOfPlayersButton(i);
+    }
+}
+
+createNumberOfPlayersButton = (playerNumber) => {
+    let playerButton = document.createElement('button');
+    playerButton.id = 'player' + playerNumber + 'Btn';
+
+    playerButton.innerHTML = (playerNumber + 1);
+    if(playerNumber == 0){
+        playerButton.innerHTML += ' Player';
+    }else{
+        playerButton.innerHTML += ' Players';
+    }
+
+    playerButton.classList.add('cellSizeButton');
+    switch(playerNumber){
+        case 0:
+            playerButton.classList.add('greenButton');
+            break;
+        case 1:
+            playerButton.classList.add('pinkButton');
+            break;
+        case 2:
+            playerButton.classList.add('orangeButton');
+            break;
+        case 3:
+            playerButton.classList.add('redButton');
+            break;
+    }
+    
+    playerButton.onclick = () => {
+        for(let i = 0; i < maxNumberOfPlayers; i++){
+            let buildTable = document.getElementById('buildTable' + i);
+
+            if(i <= playerNumber && buildTable.classList.contains('displayNone')){
+                buildTable.classList.remove('displayNone');
+            }
+            
+            if(i > playerNumber && !buildTable.classList.contains('displayNone')){
+                buildTable.classList.add('displayNone');
+            }
+        }
+    }
+
+    document.getElementById('numberOfPlayersButtonsDiv').appendChild(playerButton);
+}
+
 //################## Footer Stuff ##################
 createFooter = () => {
     let siteBorderDiv = document.getElementById('siteBorderDiv');
@@ -1541,5 +1594,6 @@ createCharactersTable();
 createVehiclesTables();
 createTiresTable();
 createGlidersTable();
+createNumberOfPlayersButtons();
 createAllRandomizersTables();
 createFooter();

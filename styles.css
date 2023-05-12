@@ -269,3 +269,7 @@ h3{
 .footer a:hover{
     color: white;
 }
+
+.displayNone {
+    display: none;
+}
