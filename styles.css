@@ -82,6 +82,7 @@ h3{
     width: 150px;
     height: 115px;
     box-shadow: 0 3px 5px black, inset 0 0 5px white;
+    box-sizing: border-box;
 }
 
 .errorRandomParts{
@@ -94,6 +95,7 @@ h3{
     width: 150px;
     height: 115px;
     box-shadow: 0 3px 5px black, inset 0 0 5px white;
+    box-sizing: border-box;
 }
 
 .selectableCell{
@@ -125,6 +127,7 @@ h3{
     height: 115px;
     transition-duration: 0.4s;
     box-shadow: 0 3px 5px black, inset 0 0 5px white;
+    box-sizing: border-box;
 }
 
 .unselectableCell:hover{
