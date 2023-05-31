@@ -12,6 +12,7 @@
     - OK Botao de randomizar
     - OK Titulos
     - OK Fundo do site
+    - OK Part Section do build randomizer esquisito
 - OK Selecionar até 4 players
 
 
@@ -20,6 +21,5 @@
 - Randomizador de copa
 - Double click seleciona apenas oq vc cliclou
 - Estilo
-    - Part Section do build randomizer esquisito
     - Mais cores de Botões, e talvez adicionar icones nos botões
     - Melhorar para mobile
