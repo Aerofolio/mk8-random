@@ -106,6 +106,13 @@ const characters = [
         type: 'large'
     },
     {
+        imagePath: 'images/characters/peteyPiranha_icon.webp',
+        name: 'Petey Piranha',
+        id: 54,
+        selectable: true,
+        type: 'medium'
+    },
+    {
         imagePath: 'images/characters/babyMario_icon.webp',
         name: 'Baby Mario',
         id: 16,
@@ -155,6 +162,13 @@ const characters = [
         type: 'medium'
     },
     {
+        imagePath: 'images/characters/wiggler_icon.webp',
+        name: 'Wiggler',
+        id: 55,
+        selectable: true,
+        type: 'large'
+    },
+    {
         imagePath: 'images/characters/wario_icon.png',
         name: 'Wario',
         id: 23,
@@ -202,6 +216,13 @@ const characters = [
         id: 29,
         selectable: true,
         type: 'large'
+    },
+    {
+        imagePath: 'images/characters/kamek_icon.webp',
+        name: 'Kamek',
+        id: 56,
+        selectable: true,
+        type: 'medium'
     },
     {
         imagePath: 'images/characters/lemmy_icon.png',
