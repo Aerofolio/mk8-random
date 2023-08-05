@@ -1468,7 +1468,7 @@ randomizeTire = (buildNumber) =>{
         document.getElementById('random' + buildNumber + 'TireName').innerHTML = 'Error!';
         document.getElementById('random' + buildNumber + 'TireImage').src = 'images/other/interrogation.png';
         document.getElementById('random' + buildNumber + 'Tire').classList.replace('randomParts', 'errorRandomParts');
-        document.getElementById('random' + buildNumber + 'TireImage').classList.replace('vehiclePart', 'charactersIcon');
+        document.getElementById('random' + buildNumber + 'TireImage').classList.replace('tireIcon', 'charactersIcon');
     }else{
         let randomizedTire = avaliableTires[getRandomIntBetween(0, avaliableTires.length - 1)];
         document.getElementById('random' + buildNumber + 'TireName').innerHTML = randomizedTire.name;
@@ -1484,7 +1484,7 @@ randomizeGlider = (buildNumber) =>{
         document.getElementById('random' + buildNumber + 'GliderName').innerHTML = 'Error!';
         document.getElementById('random' + buildNumber + 'GliderImage').src = 'images/other/interrogation.png';
         document.getElementById('random' + buildNumber + 'Glider').classList.replace('randomParts', 'errorRandomParts');
-        document.getElementById('random' + buildNumber + 'GliderImage').classList.replace('vehiclePart', 'charactersIcon');
+        document.getElementById('random' + buildNumber + 'GliderImage').classList.replace('gliderIcon', 'charactersIcon');
     }else{
         let randomizedGlider = avaliableGliders[getRandomIntBetween(0, avaliableGliders.length - 1)];
         document.getElementById('random' + buildNumber + 'GliderName').innerHTML = randomizedGlider.name;
@@ -1556,11 +1556,29 @@ createNumberOfPlayersButton = (playerNumber) => {
             
             if(i > playerNumber && !buildTable.classList.contains('displayNone')){
                 buildTable.classList.add('displayNone');
+                resetPlayerParts(i);
             }
         }
     }
 
     document.getElementById('numberOfPlayersButtonsDiv').appendChild(playerButton);
+}
+
+resetPlayerParts = (playerNumber) => {
+    document.getElementById('random' + playerNumber + 'CharacterName').innerHTML = '';
+    document.getElementById('random' + playerNumber + 'CharacterImage').src = 'images/other/interrogation.png';
+
+    document.getElementById('random' + playerNumber + 'VehicleName').innerHTML = '';
+    document.getElementById('random' + playerNumber + 'VehicleImage').src = 'images/other/interrogation.png';
+    document.getElementById('random' + playerNumber + 'VehicleImage').classList.replace('vehiclePart', 'charactersIcon');//charactersIcon
+
+    document.getElementById('random' + playerNumber + 'TireName').innerHTML = '';
+    document.getElementById('random' + playerNumber + 'TireImage').src = 'images/other/interrogation.png';
+    document.getElementById('random' + playerNumber + 'TireImage').classList.replace('tireIcon', 'charactersIcon');
+
+    document.getElementById('random' + playerNumber + 'GliderName').innerHTML = '';
+    document.getElementById('random' + playerNumber + 'GliderImage').src = 'images/other/interrogation.png';
+    document.getElementById('random' + playerNumber + 'GliderImage').classList.replace('gliderIcon', 'charactersIcon');
 }
 
 createRandomizeAllButton = () => {
@@ -1573,7 +1591,10 @@ createRandomizeAllButton = () => {
 
     randmozieAllButton.onclick = () => {
         for(let i = 0; i < maxNumberOfPlayers; i++){
-            document.getElementById('btnRandomize' + i).onclick();
+            let buildTable = document.getElementById('buildTable' + i);
+            if(!buildTable.classList.contains('displayNone')){
+                document.getElementById('btnRandomize' + i).onclick();
+            }
         }
     };
     
