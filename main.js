@@ -274,6 +274,13 @@ const characters = [
         type: 'large'
     },
     {
+        imagePath: 'images/characters/peachette_icon.webp',
+        name: 'Peachette',
+        id: 57,
+        selectable: true,
+        type: 'medium'
+    },
+    {
         imagePath: 'images/characters/inklingGirl_icon.png',
         name: 'Inkling Girl',
         id: 37,
@@ -281,30 +288,9 @@ const characters = [
         type: 'medium'
     },
     {
-        imagePath: 'images/characters/inklingBoy_icon.png',
-        name: 'Inkling Boy',
-        id: 38,
-        selectable: true,
-        type: 'medium'
-    },
-    {
-        imagePath: 'images/characters/link_icon.png',
-        name: 'Link',
-        id: 39,
-        selectable: true,
-        type: 'large'
-    },
-    {
         imagePath: 'images/characters/villagerMale_icon.png',
-        name: 'Villager (Male)',
+        name: 'Villager',
         id: 40,
-        selectable: true,
-        type: 'medium'
-    },
-    {
-        imagePath: 'images/characters/villagerFemale_icon.png',
-        name: 'Villager (Female)',
-        id: 41,
         selectable: true,
         type: 'medium'
     },
@@ -314,6 +300,34 @@ const characters = [
         id: 42,
         selectable: true,
         type: 'small'
+    },
+    {
+        imagePath: 'images/characters/link_icon.png',
+        name: 'Link',
+        id: 39,
+        selectable: true,
+        type: 'large'
+    },
+    {
+        imagePath: 'images/characters/diddyKong_icon.png',
+        name: 'Diddy Kong',
+        id: 58,
+        selectable: true,
+        type: 'medium'
+    },
+    {
+        imagePath: 'images/characters/funkyKong_icon.png',
+        name: 'Funky Kong',
+        id: 59,
+        selectable: true,
+        type: 'large'
+    },
+    {
+        imagePath: 'images/characters/pauline_icon.png',
+        name: 'Pauline',
+        id: 60,
+        selectable: true,
+        type: 'large'
     },
     {
         imagePath: 'images/characters/mii_icon.png',
