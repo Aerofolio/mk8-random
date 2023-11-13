@@ -1634,13 +1634,6 @@ createFooter = () => {
     socialSpanText.innerHTML = 'You can contact me using any of the following links:<br>';
     socialSpan.append(socialSpanText);
 
-    let twitterSpan = document.createElement('a');
-    twitterSpan.href = 'https://twitter.com/BodanezeReva';
-    twitterSpan.innerHTML = 'Twitter';
-    twitterSpan.target = '_blank';
-    twitterSpan.rel = 'noopener noreferrer';
-    socialSpan.append(twitterSpan);
-
     let linkedinSpan = document.createElement('a');
     linkedinSpan.href = 'https://www.linkedin.com/in/paulo-bodaneze-reva-desenvolvedor/';
     linkedinSpan.innerHTML = 'Linkedin'
