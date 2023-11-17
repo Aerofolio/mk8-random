@@ -1,98 +1,106 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <title>MK8 Build Randomizer</title>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="Mario Kart 8 Deluxe, Mario Kart, Mario Kart 8, Mario Kart Random, Mario Kart Randomizer, Mario Kart 8 Random, Mario Kart 8 Randomizer">
-        <meta name="description" content="mario Kart 8 Build Randomizer">
-        <meta name="author" content="Paulo Bodaneze Reva">
-        <link rel="icon" href="images/other/interrogation.png">
-    </head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFBG1Q2HGC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>MK8 Build Randomizer</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Mario Kart 8 Deluxe, Mario Kart, Mario Kart 8, Mario Kart Random, Mario Kart Randomizer, Mario Kart 8 Random, Mario Kart 8 Randomizer"
+    />
+    <meta name="description" content="mario Kart 8 Build Randomizer" />
+    <meta name="author" content="Paulo Bodaneze Reva" />
+    <link rel="icon" href="images/other/interrogation.png" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PFBG1Q2HGC"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-        gtag('config', 'G-PFBG1Q2HGC');
-    </script>
-    <body>
-        <div id="siteBorderDiv">
-            <div id="buildDiv">
-                <img id="logo" src="images/other/mk8Logopng.png">
-                <h2>Mario Kart 8 Deluxe Build Randomizer</h2>
-                <div id="numberOfPlayersButtonsDiv">
-                </div>
-                <div id="randmozieAllButtonDiv">
-                </div>
-                <div id="buildsTablesDiv">
-                    <div id="buildTableAndBtnDiv0">
-                        <table id="buildTable0"></table>
-                    </div>
-                    <div id="buildTableAndBtnDiv1">
-                        <table id="buildTable1"></table>
-                    </div>
-                    <div id="buildTableAndBtnDiv2">
-                        <table id="buildTable2"></table>
-                    </div>
-                    <div id="buildTableAndBtnDiv3">
-                        <table id="buildTable3"></table>
-                    </div>
-                </div>
-            </div>
-
-            <div id="charactersDiv">
-                <h2>Characters</h2>
-                <div id="charactersAndBtnDiv">
-                    <table id="charactersTable"></table>
-                </div>
-            </div>
-
-            <div id="vehiclesDiv">
-                <h2>Vehicles</h2>
-
-                <div id="kartsDiv">
-                    <h3>Karts</h3>
-                    <div id="kartsAndBtnDiv">
-                        <table id="kartsTable"></table>
-                    </div>
-                </div>
-                <div id="standartBikesDiv">
-                    <h3>Standart Bikes</h3>
-                    <div id="standartBikesAndBtnDiv">
-                        <table id="standartBikesTable"></table>
-                    </div>
-                </div>
-                <div id="sportBikesDiv">
-                    <h3>Sport Bikes</h3>
-                    <div id="sportBikesAndBtnDiv">
-                        <table id="sportBikesTable"></table>
-                    </div>
-                </div>
-                <div id="atvsDiv">
-                    <h3>ATVs</h3>
-                    <div id="atvsAndBtnDiv">
-                        <table id="atvsTable"></table>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tiresDiv">
-                <h2>Tires</h2>
-                <div id="tiresAndBtnDiv">
-                    <table id="tiresTable"></table>
-                </div>
-            </div>
-
-            <div id="glidersDiv">
-                <h2>Gliders</h2>
-                <div id="glidersAndBtnDiv">
-                    <table id="glidersTable"></table>
-                </div>
-            </div>
+    gtag("config", "G-PFBG1Q2HGC");
+  </script>
+  <body>
+    <div id="siteBorderDiv">
+      <div id="buildDiv">
+        <img id="logo" src="images/other/mk8Logopng.png" />
+        <h2>Mario Kart 8 Deluxe Build Randomizer</h2>
+        <div id="numberOfPlayersButtonsDiv"></div>
+        <div id="randmozieAllButtonDiv"></div>
+        <div id="buildsTablesDiv">
+          <div id="buildTableAndBtnDiv0">
+            <table id="buildTable0"></table>
+          </div>
+          <div id="buildTableAndBtnDiv1">
+            <table id="buildTable1"></table>
+          </div>
+          <div id="buildTableAndBtnDiv2">
+            <table id="buildTable2"></table>
+          </div>
+          <div id="buildTableAndBtnDiv3">
+            <table id="buildTable3"></table>
+          </div>
         </div>
+      </div>
+
+      <div id="tabSelector"></div>
+
+      <div id="charactersDiv">
+        <h2>Characters</h2>
+        <div id="charactersAndBtnDiv">
+          <table id="charactersTable"></table>
+        </div>
+      </div>
+
+      <div id="vehiclesDiv">
+        <h2>Vehicles</h2>
+
+        <div id="kartsDiv">
+          <h3>Karts</h3>
+          <div id="kartsAndBtnDiv">
+            <table id="kartsTable"></table>
+          </div>
+        </div>
+        <div id="standartBikesDiv">
+          <h3>Standart Bikes</h3>
+          <div id="standartBikesAndBtnDiv">
+            <table id="standartBikesTable"></table>
+          </div>
+        </div>
+        <div id="sportBikesDiv">
+          <h3>Sport Bikes</h3>
+          <div id="sportBikesAndBtnDiv">
+            <table id="sportBikesTable"></table>
+          </div>
+        </div>
+        <div id="atvsDiv">
+          <h3>ATVs</h3>
+          <div id="atvsAndBtnDiv">
+            <table id="atvsTable"></table>
+          </div>
+        </div>
+      </div>
+
+      <div id="tiresDiv">
+        <h2>Tires</h2>
+        <div id="tiresAndBtnDiv">
+          <table id="tiresTable"></table>
+        </div>
+      </div>
+
+      <div id="glidersDiv">
+        <h2>Gliders</h2>
+        <div id="glidersAndBtnDiv">
+          <table id="glidersTable"></table>
+        </div>
+      </div>
+    </div>
     <script src="main.js"></script>
-    </body>
+  </body>
 </html>

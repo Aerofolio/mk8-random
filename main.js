@@ -790,6 +790,7 @@ createVehiclesTables = () => {
     atvsDiv.classList.add('tableSection');
     vehiclesDiv.classList.add('tableSection');
     vehiclesDiv.classList.add('partSection');
+    vehiclesDiv.classList.add('displayNone');
 
     let vehicleButtonsDiv = document.createElement('div');
     vehicleButtonsDiv.id = 'vehicleButtonsDiv';
@@ -1117,6 +1118,7 @@ createTiresTable = () => {
     tiresTable.innerHTML = tiresTableInnerHTML;
     tiresDiv.classList.add('tableSection');
     tiresDiv.classList.add('partSection');
+    tiresDiv.classList.add('displayNone');
 
     let tiresButtonsDiv = document.createElement('div');
     tiresButtonsDiv.id = 'tiresButtonsDiv';
@@ -1287,6 +1289,7 @@ createGlidersTable = () => {
     glidersTable.innerHTML = glidersTableInnerHTML;
     glidersDiv.classList.add('tableSection');
     glidersDiv.classList.add('partSection');
+    glidersDiv.classList.add('displayNone');
 
     let glidersButtonsDiv = document.createElement('div');
     glidersButtonsDiv.id = 'glidersButtonsDiv';
@@ -1654,6 +1657,57 @@ createFooter = () => {
     siteBorderDiv.append(footerElement);
 }
 
+//################## Tabs stuff ##################
+createTabSelectorDiv = () => {
+    let tabSelectorDiv = document.getElementById('tabSelector');
+    tabSelectorDiv.classList.add('partSection');
+    tabSelectorDiv.classList.add('tableSection');
+
+    let charactersTabButton = document.createElement('button');
+    charactersTabButton.id = 'charactersTabBtn';
+    charactersTabButton.innerHTML = 'Characters';
+    charactersTabButton.classList.add('cellSizeButton');
+    charactersTabButton.classList.add('pinkButton');
+    charactersTabButton.onclick = () => changeTab('charactersDiv');
+
+    let vehiclesTabButton = document.createElement('button');
+    vehiclesTabButton.id = 'vehiclesTabBtn';
+    vehiclesTabButton.innerHTML = 'Vehicles';
+    vehiclesTabButton.classList.add('cellSizeButton');
+    vehiclesTabButton.classList.add('greenButton');
+    vehiclesTabButton.onclick = () => changeTab('vehiclesDiv');
+
+    let tiresTabButton = document.createElement('button');
+    tiresTabButton.id = 'tiresTabBtn';
+    tiresTabButton.innerHTML = 'Tires';
+    tiresTabButton.classList.add('cellSizeButton');
+    tiresTabButton.classList.add('yellowButton');
+    tiresTabButton.onclick = () => changeTab('tiresDiv');
+
+    let glidersTabButton = document.createElement('button');
+    glidersTabButton.id = 'glidersTabBtn';
+    glidersTabButton.innerHTML = 'Gliders';
+    glidersTabButton.classList.add('cellSizeButton');
+    glidersTabButton.classList.add('redButton');
+    glidersTabButton.onclick = () => changeTab('glidersDiv');
+
+    tabSelectorDiv.appendChild(charactersTabButton);
+    tabSelectorDiv.appendChild(vehiclesTabButton);
+    tabSelectorDiv.appendChild(tiresTabButton);
+    tabSelectorDiv.appendChild(glidersTabButton);
+}
+
+changeTab = (tabId) => {
+    let tabsIdsArray = ['charactersDiv', 'vehiclesDiv', 'tiresDiv', 'glidersDiv'];
+
+    tabsIdsArray.forEach(x => {
+        if(x != tabId){
+            document.getElementById(x).classList.add('displayNone');
+        }else{
+            document.getElementById(x).classList.remove('displayNone');
+        }
+    });
+}
 //################## Start ##################
 const numberOfColumns = 8;
 createCharactersTable();
@@ -1664,3 +1718,4 @@ createNumberOfPlayersButtons();
 createRandomizeAllButton();
 createAllRandomizersTables();
 createFooter();
+createTabSelectorDiv();
